@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import About from './components/About';
+import './sass/main.scss';
 
 function App() {
   return (
