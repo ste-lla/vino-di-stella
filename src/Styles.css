@@ -1,0 +1,148 @@
+
+/*   LANDING PAGE   */
+
+.landingContainer {
+    height: 100vh;
+    background: url('./images/desertBWRainWithLogo.jpg') no-repeat center fixed;     
+    background-size: cover;
+}
+
+.formContainer {
+    margin-top: 33.5%;
+}
+
+form .formLabelHome {
+    color: whitesmoke;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    font-family: 'Oooh Baby', cursive;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+}
+
+form .enterButton {
+    background-color: black !important;
+    color: white !important;
+    font-size: 1.75rem !important;
+    font-family: 'Oooh Baby', cursive !important;
+    font-weight: 600;
+    width: 12rem !important;
+    border: none !important;
+    letter-spacing: 0.15rem !important;
+    border-radius: 1rem !important;
+    
+}
+
+form .enterButton:hover {
+    color: rgb(231, 198, 108) !important;
+}
+
+#confirmAgeMsg {
+    font-size: 2.5rem;
+    color: rgb(231, 198, 108);
+    font-family: 'Oooh Baby', cursive !important;
+    font-weight: 600;
+    
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/*   HOME   */
+
+.homeContainer {
+    height: 100vh;
+    /* background-color: black; */
+    overflow: auto;
+    overflow-x: hidden;
+    animation: changeBackgroundColor linear 3.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeBackgroundColor {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+
+.burgerMenu{
+    font-size: 3rem;
+    color: white;
+    margin-left: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.burgerMenu:hover {
+    cursor: pointer;
+    color:rgb(231, 198, 108);
+}
+
+.sideNavList {
+    list-style: none;
+}
+
+.mainHome {
+    width: 60vw;
+    /* min-width: fit-content;
+    min-height: fit-content; */
+    /* border: 3px solid rgb(231, 198, 108); */
+    position: relative;
+    top: 20vh; 
+    color: white;
+    padding: 1.5rem;
+    animation: changeBorderColor linear 3.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeBorderColor {
+    0% {
+        border: 3px solid white; 
+    }
+    100% {
+        border: 3px solid rgb(231, 198, 108);
+    }
+}
+
+.greetingHome {
+    font-size: 4.15rem;
+}
+
+.infoHome {
+    text-align: justify;
+    font-size: 1.25rem;
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/*   WINE   */
+
+
+.wineContainer {
+    height: 100vh;
+    background-color: black;
+    overflow-y: scroll;
+
+}
+
+.mainWine {
+    border: 3px solid rgb(231, 198, 108);
+}
+
+.wineBottleImg {
+    width: 25vw;
+    height: auto;
+}
+
+/* .tempBordWine {
+    border: 3px solid blue;
+} */
