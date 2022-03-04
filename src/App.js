@@ -4,6 +4,8 @@ import Landing from './components/Landing';
 import About from './components/About';
 import Home from './components/Home';
 import Wine from './components/Wine';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/wine' element={<Wine/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
       </Routes>
     </div>
   );

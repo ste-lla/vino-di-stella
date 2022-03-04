@@ -10,11 +10,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Home = () => {
 
-   /*  useEffect(() => {
-
-    
-    },[]) */
-    
     function SideNav() {
         const [show, setShow] = useState(false);
       
@@ -28,18 +23,19 @@ const Home = () => {
             </div>
             {/* <Button variant="primary" onClick={handleShow}>Launch</Button> */}
       
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas className="sideNavMain" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Vino Di Stella</Offcanvas.Title>
+                    <Offcanvas.Title className="sideNavTitle">Vino Di Stella</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul className="sideNavList">
-                        <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/wine">Our Wines</Link></li>
-                        <li><Link to="/cart">Cart</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                        <li><Link to="/register">Register</Link></li>
+                        <li><Link className="navLinks" to="/home">Home</Link></li>
+                        <li><Link className="navLinks" to="/about">About</Link></li>
+                        <li><Link className="navLinks" to="/wine">Our Wines</Link></li>
+                        <li><Link className="navLinks" to="/cart">Cart</Link></li>
+                        <li><Link className="navLinks" to="/login">Login</Link></li>
+                        <li><Link className="navLinks" to="/register">Register</Link></li>
+                        <li><Link className="navLinks" to="/contact">Contact Us</Link></li>
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -56,14 +52,13 @@ const Home = () => {
             </Row>
             
             <div className="mainHome mx-auto">
-                <h1 className="text-center greetingHome">Welcome to Vino Di Stella</h1>
-                <p className="infoHome">Jelly beans tiramisu topping sweet chocolate bar halvah. Tiramisu fruitcake 
-                    carrot cake chupa chups marshmallow chocolate bar gummies jelly. Sesame snaps 
-                    sugar plum sugar plum marshmallow gummies jelly beans. Chocolate liquorice 
-                    dragée apple pie biscuit pie cake. Powder croissant powder chupa chups biscuit 
-                    croissant cupcake. Cupcake topping dragée pastry bear claw croissant carrot cake 
-                    halvah. Cupcake soufflé bonbon tootsie roll macaroon pudding macaroon shortbread. 
-                    Muffin pudding sweet cookie toffee wafer.
+                <div className="text-center greetingHome headingFontStyle">Ciao!</div>
+                <p className="infoHome">
+                    Hello! Welcome to Vino Di Stella. We are so glad that you decided to stop
+                    by. You may have just stumbled upon one of the purest top quality wines
+                    in existence. Yes, we truly believe that and so will you should you decide 
+                    to try! From the wine connoisseurs to the causal adventurists, Vino Di Stella 
+                    has something refreshing for everyone to love and enjoy. 
                 </p>
             </div>            
         </div>

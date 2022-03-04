@@ -35,6 +35,7 @@ const Wine = () => {
                         <li><Link to="/cart">Cart</Link></li>
                         <li><Link to="/login">Login</Link></li>
                         <li><Link to="/register">Register</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -51,7 +52,8 @@ const Wine = () => {
                 <Col className="tempBordWine d-flex justify-content-center">
                     <img className="wineBottleImg" src={WineBottle1} alt="WineBottle1" />
                     <div>
-                        Quantity 
+                    {/* ------ IDEA ------ */}
+                        {/* Add quantity form and add to cart icon inside accordian */} 
                     </div>   
                 </Col>
                 <Col className="tempBordWine d-flex justify-content-center align-items-center">
