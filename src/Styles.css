@@ -270,6 +270,29 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 
+/* WINE SELECTIONS */
+
+    .quantityButtons {
+        border: 2px solid black;
+        width: 35px;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .plusMinus:hover {
+        cursor: pointer;
+    }
+
+    .addCartBtn {
+        background-color: black !important;
+        border: none !important;
+        color: rgb(231, 198, 108) !important;
+    }
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
 /*   MEDIA QUERIES   */
 
 

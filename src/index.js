@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
+import inventoryReducer from './features/inventory';
+import cartReducer from './features/cart';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore({
   reducer: {
-
+    inventory: inventoryReducer,
+    cart: cartReducer
   }
 })
 
