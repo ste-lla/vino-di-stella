@@ -12,15 +12,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from '../features/cart'
 
 const Wine = () => {
-    const[quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(0);
     const[qtyLimitMsg, setQtyLimitMsg] = useState('');
     const [itemAddedMsg, setItemAddedMsg] = useState('');
     const[outOfStock, setOutOfStock] = useState('');
-    const wine = useSelector((state) => state.inventory.value);
-    const cart = useSelector((state) => state.cart.value.cart)
-    const dispatch = useDispatch((state) => state.cart.value);
+    
+    const wine = useSelector(state => state.inventory.value);
+    const cart = useSelector(state => state.cart.value.cart)
+    const dispatch = useDispatch(state => state.cart.value);
 
-    console.log(cart);
+    //console.log(cart);
 
     //SIDE NAVIGATION WINDOW
     function SideNav() {
@@ -56,8 +57,20 @@ const Wine = () => {
 
 
    // QUANTITY BUTTONS - INC AND DEC QTY
-    let _incrementQty = (e) => {
-        if(quantity <= 10) {
+    /* 
+    --PROBLEM: All wine quantity values change simultaneously  
+    --TRIED SOLUTION (below): It works but w/ a "lag" so when the + is first 
+        clicked, the state remains at 0 INSIDE the incrementQty func
+        but somehow does in fact increase to 1 OUTSIDE the incrementQty func.
+        console.log() to see this
+    
+    let qtyValue = e.target.parentElement.querySelector('.qtyValue');
+    qtyValue.innerText = quantity;  
+    */
+    
+    //Increment Qty Btn (+)
+    let _incrementQty = () => {
+        if(quantity <= 9) {
             setQuantity(quantity + 1);
         }
         else {
@@ -65,26 +78,13 @@ const Wine = () => {
         }
     }
 
-    /* 
-    TRYING TO JUST CHANGE QTY OF ITEM BEING MANIPULATED ONLY
-    PROBLEM: Want to just change qty of wine being manipulated only 
-        instead of all qty being affected together
-    The Solution below makes this work, but its has a "lag" so when
-        the + is first clicked, the state remains at 0 inside the incrementQty func
-        but somehow does in fact increase to 1 outside the incrementQty func
-    
-    let qtyValue = document.querySelector('.qtyValue'); //returns NULL ???
-    qtyValue.innerText = quantity; //cannot set prop val of null
-    console.log(quantity); 
-    */
-    
+    //Decrement Qty Btn (-)
     let _decrementQty = () => {
         if(quantity !== 0) {
             setQuantity(quantity - 1);
         } 
         setQtyLimitMsg('');
     }
-
 
 
     // ADD ITEMS TO CART
@@ -110,9 +110,9 @@ const Wine = () => {
             //cartItem qty + qty user wants to add > 10. 10 qty per wine is max limit
             if(cartItemOverQty) {
                 setQtyLimitMsg('Qty limit of 10 reached for this item');
-                    setTimeout(function() {
-                        setQtyLimitMsg('');
-                    }, 8000);
+                setTimeout(function() {
+                    setQtyLimitMsg('');
+                }, 8000);
             }
             else {
                 //if wineItem selected is already in cart --> check inventory to verify wineItem qty >= asking qty && asking qty + qty already in cart for this wineItem
@@ -167,12 +167,13 @@ const Wine = () => {
         }
     }
 
+
     let wineAndDetails = wine.inventory.map((wine) => {
         
         return(
             <Row key={wine.id} className="mt-3">
                 <Col className="tempBordWine d-flex justify-content-center">
-                    <img className="wineBottleImg" src={WineBottle1} alt="WineBottle1" /> 
+                    <img className="wineBottleImg" src={WineBottle1} alt="Wine Bottle" /> 
                 </Col>
 
                 <Col className="tempBordWine d-flex justify-content-center align-items-center">
@@ -190,9 +191,9 @@ const Wine = () => {
                                     <div className="winePrice">&#36;{wine.price}</div>
                                     
                                     <div className="d-flex">
-                                        <div className="quantityButtons plusMinus" onClick={_decrementQty}>-</div>
-                                        <div className="quantityButtons qtyValue">{quantity}</div>
-                                        <div className="quantityButtons plusMinus" onClick={_incrementQty}>+</div>
+                                        <div className="quantityButtons" onClick={_decrementQty}>&lt;</div>
+                                        <div className="qtyValue">{quantity}</div>
+                                        <div className="quantityButtons" onClick={_incrementQty}>&gt;</div>
                                     </div>
                                     
                                     <div className="d-flex">

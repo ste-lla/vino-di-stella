@@ -273,20 +273,89 @@
 /* WINE SELECTIONS */
 
     .quantityButtons {
-        border: 2px solid black;
-        width: 35px;
+        border-radius: 50%;
+        background-color: rgb(207, 203, 203);
+        font-weight: bold;
+        width: 30px;
+        height: 25px;
         text-align: center;
         margin-top: 0.5rem;
     }
 
-    .plusMinus:hover {
+    .quantityButtons:hover {
         cursor: pointer;
+    }
+
+    .qtyValue {
+        width: 35px;
+        text-align: center;
+        margin-top: 0.5rem;
     }
 
     .addCartBtn {
         background-color: black !important;
         border: none !important;
         color: rgb(231, 198, 108) !important;
+        border-radius: 1rem !important;
+    }
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* CART */
+
+    .cartContainer {
+        height: 100vh;
+        background-color: rosybrown;
+    }
+
+    .cartMain {
+        color: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 3px solid rgb(231, 198, 108);
+        width: 70vw;
+        height: 70vh;
+        overflow-y: auto;
+        /* background-color: #6b6f75; */
+        
+    }
+
+    /* .cartMain::-webkit-scrollbar {
+        background-color: blueviolet;
+        border-radius: 1em;
+    } */
+
+   /*  .cartMain::-webkit-scrollbar-thumb {
+        background-color: blue !important;  
+        border-radius: 20px;       
+        border: 3px solid orange;  
+    } */
+
+    .cartHeading {
+        letter-spacing: 0.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* .cartItems {
+        
+    } */
+
+    .cartImg {
+        width: 10vw;
+        height: auto;
+    }
+
+    .trashCan{
+        /* font-size: 1.5rem; */
+        color: white;
+        /* margin-left: 0.5rem; */
+        /* margin-top: 0.25rem; */
+    }
+
+    .trashCan:hover {
+        cursor: pointer;
+        color:rgb(231, 198, 108);
     }
 
 
@@ -334,8 +403,16 @@
             width: 80vw;
             margin: 5%;
         }
+    
+    /* CART */
+        .cartHeading {
+            font-size: 1.75rem;  
+        }
 
-    /* LANDING */
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
+        }
         
 }
 
@@ -354,6 +431,11 @@
 
         .infoHome {
             font-size: 1.17rem;
+        }
+    
+    /* CART */
+        .cartHeading {
+            font-size: 2.05rem;  
         }
 }
 
@@ -410,6 +492,16 @@
         .infoHome {
             font-size: 1.34rem;
         }
+
+    /* CART */
+        .cartHeading {
+            font-size: 2.35rem;  
+        }
+
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
+        }
 }
 
 
@@ -439,6 +531,16 @@
 
         .infoHome {
             font-size: 1.51rem;
+        }
+
+    /* CART */
+        .cartHeading {
+            font-size: 2.65rem;  
+        }
+
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
         }
 
 }
@@ -474,6 +576,16 @@
 
         .infoHome {
             font-size: 1.68rem;
+        }
+    
+    /* CART */
+        .cartHeading {
+            font-size: 2.95rem;  
+        }
+
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
         }
 
 }
@@ -534,6 +646,16 @@
         .infoHome {
             font-size: 1.85rem;
         }
+
+    /* CART */
+        .cartHeading {
+            font-size: 3.25rem;  
+        }
+
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
+        }
 }
 
 
@@ -572,6 +694,16 @@
 
         .infoHome {
             font-size: 2rem;
+        }
+
+    /* CART */
+        .cartHeading {
+            font-size: 3.5rem;  
+        }
+
+        .cartMain {
+            /* width: 80vw;
+            margin: 5%; */
         }
 
 }
