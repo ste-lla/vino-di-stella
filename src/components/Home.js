@@ -4,15 +4,8 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
-/* import { FaMapMarkerAlt } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaEnvelope } from "react-icons/fa";
-import { BsFacebook } from "react-icons/bs";
-import { ImInstagram } from "react-icons/im";
-import { BsTwitter } from "react-icons/bs"; */
 import Footer from './Footer';
-//import Container from "react-bootstrap/Container";
-//import Button from "react-bootstrap/Button";
+
 
 
 const Home = () => {

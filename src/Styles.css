@@ -135,7 +135,7 @@
         animation: changeBorderColor linear 2s;
         animation-fill-mode: forwards;
     }
-
+    
     @keyframes changeBorderColor {
         0% {
             border: 3px solid white; 
@@ -154,6 +154,29 @@
         letter-spacing: 0.1rem;  
         text-align: center;
     }
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* ABOUT */
+
+  /*   .aboutContainer {
+        background-color: black;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden; 
+    }
+
+    .mainAbout {
+        color: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        animation: changeBorderColor linear 2s;
+        animation-fill-mode: forwards;
+        overflow-y: auto;
+    } */
+
+   
 
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -408,7 +431,7 @@ button.accordion-button {
     
     .cartWarningMsg {
         color: red;
-        
+
     }
 
     #subtotal {
