@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
-import WineBottle1 from '../images/wine1.jpeg';
+//import WineBottle1 from '../images/wine1.jpeg';
+import WineBottle from '../images/wineBot.jpeg';
 import { Link } from 'react-router-dom';
 import { BsTrash2Fill } from 'react-icons/bs';
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +22,7 @@ const Cart = () => {
     let allCartItems = cart.cart.map((wineItem) => {
         let itemPrice = wineItem.price * wineItem.quantity;
         //console.log(`outsideFunc: ${wineItem.quantity}`);
+        //console.log(Number(wineItem.quantity));
         
         //Increase QTY Btn (+)
         let _incrementQty = (e) => {
@@ -33,7 +35,7 @@ const Cart = () => {
                 if(wineFound.quantity >= wineItem.quantity + 1) {
                     dispatch(incCartQty({
                         id: selectedWineId,
-                        quantity: wineItem.quantity + 1
+                        quantity: Number(wineItem.quantity + 1)
                     }))
                 }
                 else {
@@ -59,7 +61,7 @@ const Cart = () => {
             if(wineItem.quantity !== 1) {
                 dispatch(decCartQty({
                     id: selectedWineId,
-                    quantity: wineItem.quantity - 1
+                    quantity: Number(wineItem.quantity - 1)
                 }))
             }
         }
@@ -70,30 +72,30 @@ const Cart = () => {
         }
 
         return(
-            <Row key={wineItem.id} className="mt-3">
-                <Col className="d-flex justify-content-center">
-                    <img className="cartImg" src={WineBottle1} alt="Wine Bottle" /> 
+            <Row key={wineItem.id} className="mt-4">
+                <Col xs={6} sm={5} xl={4} className="d-flex justify-content-center order-1">
+                    <img className="cartImg" src={WineBottle} alt="Wine Bottle" /> 
                 </Col>
 
-                <Col>
-                    <div>{wineItem.name}</div>
-                    <div>&#40;&#36;{wineItem.price}&#41;</div>
+                <Col xs={6} sm={5} xl={2} className="order-2">
+                    <div className="cartItemName">{wineItem.name}</div>
+                    <div className="cartItemPrice">&#40;&euro;{wineItem.price}&#41;</div>
                 </Col>
 
-                <Col>
-                    <div className="d-flex idWine" id={wineItem.id}>
-                        <div className="quantityButtons" onClick={_decrementQty}>&lt;</div>
+                <Col xs={7} sm={6} xl={3} className="order-4 order-sm-5 order-xl-4">
+                    <div className="d-flex idWine qtyBtnsContainer" id={wineItem.id}>
+                        <div className="cartQtyBtns" onClick={_decrementQty}>&lt;</div>
                         <div className="qtyValue">{wineItem.quantity}</div>
-                        <div className="quantityButtons" onClick={_incrementQty}>&gt;</div>
+                        <div className="cartQtyBtns" onClick={_incrementQty}>&gt;</div>
                     </div>
                     
                 </Col>
 
-                <Col>
-                    <div>&#36;{itemPrice}</div>
+                <Col xs={3} sm={6} xl={2} className="order-3 order-sm-4 order-xl-3">
+                    <div className="cartItemTotal">&euro;{itemPrice}</div>
                 </Col>
 
-                <Col>
+                <Col xs={2} sm={2} xl={1} className="order-5 order-sm-3 order-xl-5">
                     <BsTrash2Fill className="trashCan" onClick={_removeCartItem} />
                 </Col>
             </Row>
@@ -104,32 +106,32 @@ const Cart = () => {
         <div className="cartContainer d-flex flex-column justify-content-center align-items-center">
             { cart.cart.length === 0 ? (
                 <div className="cartMain">
-                    <div className="text-center cartHeading headingFontStyle">Your cart is currently empty</div>
-                    <Link to="/wine" className="">Start Shopping</Link>
+                    <div className="text-center cartHeadingEmpty headingFontStyle">Your Cart Is Currently Empty</div>
+                    <div className="text-center">
+                        <Link className="" to="/wine"><Button className="startShopBtn">Shop</Button></Link>    
+                    </div>
                 </div>
             ) : (
                 <div className="d-flex flex-column justify-content-center align-items-center">
                     <div className="cartMain">
-                        <div className="text-center cartHeading headingFontStyle">Cart&#40;{cart.cartCount}&#41;</div>
+                        <div className="text-center cartHeadingFull headingFontStyle">Cart&#40;{cart.cartCount}&#41;</div>
                     
                         <div>
                             {allCartItems}
                         </div>
         
-                        <div className="">
-                            Subtotal: &#36;{cart.total}
-                            <br/>
-                            <Button>Checkout</Button>
-                            <br/>
-                            <div>*Taxes and shipping calculated at checkout</div>
+                        <div className="mt-5 subtotalContainer">
+                            <div id="subtotal" className="mb-2"><span><strong>Subtotal:</strong></span> &euro;{cart.total}</div>
+                            <Button id="checkoutBtn" className="mb-2">Checkout</Button>
+                            <div id="taxShipMsg">*Taxes and shipping calculated at checkout</div>
                         </div>
                     </div>
     
-                    <div>{qtyLimitMsg}</div>
+                    <div className="cartWarningMsg mt-2">{qtyLimitMsg}</div>
         
-                    <div>{outOfStock}</div>
+                    <div className="cartWarningMsg">{outOfStock}</div>
         
-                    <Link to="/wine" className="mt-3">Continue Shopping</Link>
+                    <Link to="/wine" className="mt-3 cartContShpLink">Continue Shopping</Link>
                 </div>
             )}
         </div>

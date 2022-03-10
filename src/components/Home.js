@@ -4,6 +4,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
+/* import { FaMapMarkerAlt } from "react-icons/fa";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaEnvelope } from "react-icons/fa";
+import { BsFacebook } from "react-icons/bs";
+import { ImInstagram } from "react-icons/im";
+import { BsTwitter } from "react-icons/bs"; */
+import Footer from './Footer';
 //import Container from "react-bootstrap/Container";
 //import Button from "react-bootstrap/Button";
 
@@ -35,7 +42,7 @@ const Home = () => {
                         <li><Link className="navLinks" to="/cart">Cart</Link></li>
                         <li><Link className="navLinks" to="/login">Login</Link></li>
                         <li><Link className="navLinks" to="/register">Register</Link></li>
-                        <li><Link className="navLinks" to="/contact">Contact Us</Link></li>
+                        {/* <li><Link className="navLinks" to="/contact">Contact Us</Link></li> */}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -44,23 +51,27 @@ const Home = () => {
       }
 
     return(
-        <div className="homeContainer">
-            <Row>
-                <Col xs={4}>
-                    <SideNav/>
-                </Col>
-            </Row>
-            
-            <div className="mainHome mx-auto">
-                <div className="text-center greetingHome headingFontStyle">Ciao!</div>
-                <p className="infoHome">
-                    Hello! Welcome to Vino Di Stella. We are so glad that you decided to stop
-                    by. You may have just stumbled upon one of the purest top quality wines
-                    in existence. Yes, we truly believe that and so will you should you decide 
-                    to try! From the wine connoisseurs to the causal adventurists, Vino Di Stella 
-                    has something refreshing for everyone to love and enjoy. 
-                </p>
-            </div>            
+        <div className="homeContainer d-flex flex-column">
+            <div className="nonFooterWrapper">
+                <Row>
+                    <Col xs={4}>
+                        <SideNav/>
+                    </Col>
+                </Row>
+                
+                <div className="mainHome mx-auto mb-2">
+                    <div className="text-center greetingHome headingFontStyle">Ciao!</div>
+                    <p className="infoHome">
+                        Hello! Welcome to Vino Di Stella. We are so glad that you decided to stop
+                        by. You may have just stumbled upon one of the purest top quality wines
+                        in existence. Yes, we truly believe that and so will you should you decide 
+                        to try! From the wine connoisseurs to the causal adventurists, Vino Di Stella 
+                        has something refreshing for everyone to love and enjoy. 
+                    </p>
+                </div> 
+            </div>
+
+            <Footer />
         </div>
     )
 }

@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
             else {
                 state.value.cart = [...state.value.cart, action.payload];
                 state.value.cartCount += action.payload.quantity;
-                state.value.total += (action.payload.price)*(action.payload.quantity);
+                state.value.total += (action.payload.price * action.payload.quantity);
             }
             
             localStorage.setItem('cartItems', JSON.stringify(state.value.cart));
@@ -39,11 +39,18 @@ export const cartSlice = createSlice({
 
         incCartQty: (state, action) => {
             let cartItem = state.value.cart.find((item) => item.id === action.payload.id);
+            
+            //console.log(state.value.total);
+            
+            state.value.cartCount = Number(state.value.cartCount);
+            state.value.total = Number(state.value.total);
 
             state.value.cart = [...state.value.cart];
             cartItem.quantity = action.payload.quantity;
             state.value.cartCount += 1;
             state.value.total += cartItem.price;
+
+            //console.log(state.value.total);
 
             localStorage.setItem('cartItems', JSON.stringify(state.value.cart));
             

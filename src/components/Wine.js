@@ -4,12 +4,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
-import WineBottle1 from '../images/wine1.jpeg';
+//import WineBottle1 from '../images/wine1.jpeg';
+import WineBottle from '../images/wineBot.jpeg';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from '../features/cart'
+import { addToCart } from '../features/cart';
+import Footer from './Footer';
 
 const Wine = () => {
     const [quantity, setQuantity] = useState(0);
@@ -17,11 +19,12 @@ const Wine = () => {
     const [itemAddedMsg, setItemAddedMsg] = useState('');
     const[outOfStock, setOutOfStock] = useState('');
     
+    //Redux
     const wine = useSelector(state => state.inventory.value);
     const cart = useSelector(state => state.cart.value.cart)
     const dispatch = useDispatch(state => state.cart.value);
 
-    //console.log(cart);
+    //console.log(quantity);
 
     //SIDE NAVIGATION WINDOW
     function SideNav() {
@@ -47,7 +50,7 @@ const Wine = () => {
                         <li><Link className="navLinks" to="/cart">Cart</Link></li>
                         <li><Link className="navLinks" to="/login">Login</Link></li>
                         <li><Link className="navLinks" to="/register">Register</Link></li>
-                        <li><Link className="navLinks" to="/contact">Contact Us</Link></li>
+                        {/* <li><Link className="navLinks" to="/contact">Contact Us</Link></li> */}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -55,18 +58,6 @@ const Wine = () => {
         );
     }
 
-
-   // QUANTITY BUTTONS - INC AND DEC QTY
-    /* 
-    --PROBLEM: All wine quantity values change simultaneously  
-    --TRIED SOLUTION (below): It works but w/ a "lag" so when the + is first 
-        clicked, the state remains at 0 INSIDE the incrementQty func
-        but somehow does in fact increase to 1 OUTSIDE the incrementQty func.
-        console.log() to see this
-    
-    let qtyValue = e.target.parentElement.querySelector('.qtyValue');
-    qtyValue.innerText = quantity;  
-    */
     
     //Increment Qty Btn (+)
     let _incrementQty = () => {
@@ -101,7 +92,7 @@ const Wine = () => {
             let wineId = parseInt(accordionItem.id);
             let wineName = accordionItem.querySelector('.wineName').textContent;
             let price = accordionItem.querySelector('.winePrice').textContent;
-            let priceNum = parseInt(price.slice(1));
+            let priceNum = Number(price.slice(1));
     
             const cartItemOverQty = cart.find(cartItem => wineId === cartItem.id && cartItem.quantity + quantity > 10);
             const wineItem = wine.inventory.find((wine => wine.id === wineId));
@@ -169,26 +160,25 @@ const Wine = () => {
 
 
     let wineAndDetails = wine.inventory.map((wine) => {
-        
         return(
-            <Row key={wine.id} className="mt-3">
-                <Col className="tempBordWine d-flex justify-content-center">
-                    <img className="wineBottleImg" src={WineBottle1} alt="Wine Bottle" /> 
+            <Row key={wine.id} className="mt-3 mb-3">
+                <Col xs={12} md={6} className="tempBordWine d-flex justify-content-center">
+                    <img className="wineBottleImg" src={WineBottle} alt="Wine Bottle" /> 
                 </Col>
 
-                <Col className="tempBordWine d-flex justify-content-center align-items-center">
+                <Col xs={12} md={6} className="tempBordWine d-flex justify-content-center align-items-center">
                     <Accordion>
                         <Accordion.Item eventKey="0" id={wine.id}>
                             <Accordion.Header className="wineName">{wine.name}</Accordion.Header>
                                 <Accordion.Body>
                                     <div>
-                                        carrot cake chupa chups marshmallow chocolate bar gummies jelly. Sesame snaps 
-                                        sugar plum sugar plum marshmallow gummies jelly beans. Chocolate liquorice 
-                                        dragée apple pie biscuit pie cake. Powder croissant powder chupa chups biscuit 
-                                        croissant cupcake. Cupcake topping dragée pastry bear claw croissant carrot cake 
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in venenatis augue. 
+                                        In tempus urna eu ultrices egestas. Pellentesque imperdiet diam nisi, vel 
+                                        fringilla nisl ornare ut. Suspendisse efficitur ultrices elit, sit amet dapibus 
+                                        eros varius ac. Curabitur blandit porttitor 
                                     </div>
                                     
-                                    <div className="winePrice">&#36;{wine.price}</div>
+                                    <div className="winePrice mt-2">&euro;{wine.price}</div>
                                     
                                     <div className="d-flex">
                                         <div className="quantityButtons" onClick={_decrementQty}>&lt;</div>
@@ -212,11 +202,14 @@ const Wine = () => {
             
 
     return (
-        <div className="wineContainer">
-            <SideNav/>
-            <Container className="mainWine">
-                {wineAndDetails}  
-            </Container>
+        <div className="wineContainer d-flex flex-column">
+            <div className="wineWrapper">
+                <SideNav/>
+                <Container className="mainWine mt-2 mb-3">
+                    {wineAndDetails}  
+                </Container>
+            </div>
+            <Footer />
         </div>
     );
 };
