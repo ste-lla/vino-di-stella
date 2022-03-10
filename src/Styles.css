@@ -13,14 +13,14 @@
 
     .landingContainer {
         height: 100vh;
-        background: url('./images/desertBWRainWithLogo.jpg') no-repeat center fixed;     
-        background-size: cover;    
+        /* background: url('./images/desertBWRainWithLogo.jpg') no-repeat center fixed;     
+        background-size: cover; */    
     }
 
-    .formContainer {
+   /*  .formContainer {
         margin-top: 33.5%;
         margin-bottom: 0%;
-    }
+    } */
 
     form .formLabelHome {
         color: whitesmoke;
@@ -505,6 +505,16 @@ button.accordion-button {
 
 /* MIN WIDTH 280px (Galaxy Fold) */
 @media only screen and (min-width: 280px) {
+    /* LANDING */
+    .landingContainer {
+        background: url('./images/landPg1.jpg') no-repeat center fixed;     
+        background-size: cover;    
+    }
+    .formContainer {
+        margin-top: 29rem;
+    }
+
+
     /* LOGIN */
         .loginForm {
             margin-left: 5%;
@@ -609,9 +619,19 @@ button.accordion-button {
 
 /* MIN WIDTH 320px */
 @media only screen and (min-width: 320px) {
+    /* LANDING */
+        .formContainer {
+            margin-top: 17rem;
+        }
     /* LOGIN */
         #loginTitle {
             margin-top: 35%;
+        }
+
+        .landPgTitle {
+            color: black;
+            font-size: 4rem;
+            text-align: center;
         }
 
     /* HOME */
@@ -681,6 +701,11 @@ button.accordion-button {
 
 /* MIN WIDTH 576px */
 @media only screen and (min-width: 576px) {
+    /* LANDING */
+    /* .formContainer {
+        margin-top: 29rem;
+    } */
+
     /* LOGIN */
         .loginForm {
             margin-left: 13%;
@@ -798,6 +823,17 @@ button.accordion-button {
 
 /* MIN WIDTH 768px */
 @media only screen and (min-width: 768px) {
+    /* LANDING */
+        .landPgTitle {
+            display: none;
+        }
+        .formContainer {
+            margin-top: 29rem;
+        }
+        .landingContainer {
+            background: url('./images/desertBWRainWithLogo.jpg') no-repeat center fixed;     
+            background-size: cover;    
+        }
     /* LOGIN */
         .loginForm {
             margin-left: 22%;
@@ -957,6 +993,11 @@ button.accordion-button {
 
 /* MIN WIDTH 992px */
 @media only screen and (min-width: 992px) {
+    /* LANDING */
+   /*  .formContainer {
+        margin-top: 29rem;
+    } */
+    
     /* LOGIN */
         .loginForm {
             margin-left: 28%;
@@ -1089,6 +1130,11 @@ button.accordion-button {
 
 /* MIN WIDTH 1200px */
 @media only screen and (min-width: 1200px) {
+    /* LANDING */
+    /* .formContainer {
+        margin-top: 29rem;
+    } */
+
     /* LOGIN */
         .loginForm {
             margin-left: 30%;
@@ -1218,6 +1264,11 @@ button.accordion-button {
 
 /* MIN WIDTH 1400px */
 @media only screen and (min-width: 1400px) {
+    /* LANDING */
+    /* .formContainer {
+        margin-top: 29rem;
+    } */
+
     /* LOGIN */
         #loginTitle {
             margin-top: 10%;

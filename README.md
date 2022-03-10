@@ -13,6 +13,10 @@ exist only as an experimental e-commerce site.
 
 ![Landing Page](/screenshots/landingPage.png)
 
+![Shopping Page](/screenshots/shopWine.png)
+
+![Cart](/screenshots/cart.png)
+
 
 ## Technologies Used
 
