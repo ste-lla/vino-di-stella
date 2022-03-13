@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import Footer from './Footer';
 import homeVineyard from '../images/greenTreeVinyard.jpeg';
-import homeVineyard2 from '../images/vineyard2Home.jpeg';
+import swirl from '../images/swirl2.png';
 
 
 
@@ -37,7 +37,6 @@ const Home = () => {
                         <li><Link className="navLinks" to="/cart">Cart</Link></li>
                         <li><Link className="navLinks" to="/login">Login</Link></li>
                         <li><Link className="navLinks" to="/register">Register</Link></li>
-                        {/* <li><Link className="navLinks" to="/contact">Contact Us</Link></li> */}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -55,77 +54,96 @@ const Home = () => {
                 </Row>
 
                 <Row>
-                    <Col className="d-flex align-items-center">
-                        <h1 className="homeHeader mx-auto">Redefining The Future Of 
-                        <br/> 
-                        <span class="underLineWord">Top Quality</span> Italian Wine
-                        </h1>
+                    <Col xs={12} md={6} className="d-flex flex-column justify-content-center mt-3">
+                        <div className="text-center ms-3 me-3">
+                            <h1 className="homeHeader headingFontStyle">
+                                Redefining The Future Of Top Quality Italian Wine
+                            </h1>
+                            <div id="swirlWrapper">
+                                <img id="swirl" src={swirl} alt="swirl" />
+                            </div>   
+                        </div>                    
                     </Col>
 
-                    <Col>
+                    <Col xs={12} md={6} className="d-flex justify-content-center">
                         <img className="homeVineyardImg" src={homeVineyard} alt="Green trees on vineyard at sunset" />
                     </Col>
                 </Row>
 
                 <Row className="mt-5">
-                    <Col xl={6} className="mx-auto">
-                      <h2 className="homeSubHeader1 text-center">Producing a Smooth and Balanced Wine Drenched in <span class="underLineWord">Elegance</span> Is No Easy Task. 
+                    <Col xs={12} md={7} xl={6} className="mx-auto">
+                      <h2 className="homeSubHeader1 text-center headingFontStyle p-2">Producing a Smooth and Balanced Wine Drenched in <span className="underLineWord">Elegance</span> Is No Easy Task. 
                           Not To Worry. Vino Di Stella Has You Covered.
                       </h2>
                     </Col>
 
-                    <Col xl={8} className="mx-auto mt-3">
-                        <p className="homeDescription1">
+                    <Col xs={12} md={10} lg={9} xl={8} className="mx-auto mt-3">
+                        <p className="homeInfoTxt p-3">
                             Vino Di Stella redefines the quality and expectations of fine Italian wine.
                             Everyday, we pour our hearts and souls into every bottle and we hope you may
-                            taste the genuine efforts of our labor. Our 85 acre vineyard contains everything
-                            we need to grow the finest grapes and transform them into something magical creating 
-                            special memories with each sip. 
+                            taste the genuine efforts of our labor. We use only the best techniques and
+                            grade A machinery, from grape seed to bottle, creating something magical 
+                            with each sip. 
                         </p>
                     </Col>
                 </Row>
 
                 <Row className="mt-5">
-                    <Col xl={6} className="">
-                        <div className="homeCircles mx-auto d-flex justify-content-center align-items-center">
+                    <Col xs={12} md={6} className="">
+                        <div className="homeCircles ourVineyardsImg headingFontStyle mx-auto d-flex justify-content-center align-items-center">
                             Our Vineyards
                         </div>
                     </Col>
 
-                    <Col xl={6}>
-
+                    <Col xs={12} sm={10} md={6} xl={4} className="d-flex justify-content-center align-items-center mx-auto">
+                        <div className="homeInfoTxt p-3">Our winery expands over 85 acres of planted vineyards, producing  
+                             nebbiolo and angiovese grapes to create our finest Barolo, Brunello di Montalcino
+                             and more. Every year, our vines yield an abundance of healthy grapes - 
+                             the stepping stones for creating our award-winning wines.
+                        </div>
                     </Col>
                 </Row>
 
                 <Row className="mt-5">
-                    <Col xl={6}>
-
+                    <Col xs={12} sm={10} md={6} xl={4} className="d-flex flex-column justify-content-center align-items-center mx-auto order-2 order-md-1">
+                        <div className="homeInfoTxt p-3">
+                            We offer guided tours and tastings &#40;California location only&#41;
+                            Thursday-Sunday from 11am-4:30pm. Each tour is around 30 min and begins
+                            with an introduction to the history of our company and spectacular wine
+                            making process. You will then have a chance try each of our wines paired
+                            with a appetizer specially picked to pair with your current wine sample. 
+                        </div>
+                        <div id="ageReqrmntMsg" className="p-3" style={{color: "white"}}>*Must be 21 or older to participate. I.D is required before entry</div>
                     </Col>
 
-                    <Col xl={6} className="">
-                        <div className="homeCircles mx-auto d-flex justify-content-center align-items-center">
+                    <Col xs={12} md={6} className="order-1 order-md-2">
+                        <div className="homeCircles winePourImg headingFontStyle mx-auto d-flex justify-content-center align-items-center">
                             Wine Tours and Tastings
                         </div>
                     </Col>
                 </Row>
 
                 <Row className="mt-5">
-                    <Col>
-                        <div className="homeVineyardImg2 d-flex justify-content-center align-items-center">We Welcome You To Visit Us Anytime</div>
-                        {/* <img className="homeVineyardImg2" src={homeVineyard2} alt="Wine vineyard with mountains in background" /> */}
+                    <Col className="d-flex justify-content-center align-items-center accomplishmentsWrapper">
+                        <div className="accomplishments text-center">
+                            <h2 id="accompTitle" className="headingFontStyle">Our Humble Accomplishments</h2>
+                            Named Wine of the Year by Fancy Italian Wine Magazine
+                            <br/>
+                            Voted #1 Wine by Wonderful Wines of the World LLC
+                            <br />
+                            "Hands down best wine I've ever tasted!" -Amaril Logosse
+                        </div>
                     </Col>
                 </Row>
-                
-               {/*  <div className="mainHome mx-auto mb-2">
-                    <div className="text-center greetingHome headingFontStyle">Ciao!</div>
-                    <p className="infoHome">
-                        Hello! Welcome to Vino Di Stella. We are so glad that you decided to stop
-                        by. You may have just stumbled upon one of the purest top quality wines
-                        in existence. Yes, we truly believe that and so will you should you decide 
-                        to try! From the wine connoisseurs to the causal adventurists, Vino Di Stella 
-                        has something refreshing for everyone to love and enjoy. 
-                    </p>
-                </div>  */}
+
+                <Row className="mt-5">
+                    <Col>
+                        <div className="homeVineyardImg2 d-flex flex-column justify-content-center align-items-center">
+                            <p id="visitUs" className="headingFontStyle">We Welcome You To Visit Us</p>
+                            <p id="hoursOfOp"><strong>Open:</strong> Thursday - Sunday | 11am to 4:30pm</p>
+                        </div>
+                    </Col>
+                </Row>
             </div>
 
             <Footer />

@@ -30,12 +30,16 @@ const Footer = () => {
 
                 <Col xs={12} md={6} lg={5} className="footerCols footerCtrCol">
                     <div className="footer-center">
-                        <div className="mb-2">
-                            <FaMapMarkerAlt className="me-2" />Via Stazione, 10A, 37035 Santi Brogio di Valpollicci VR, Italy
+                        <div className="mb-1">
+                            <FaMapMarkerAlt className="me-2" />Via Stazione, 33A, 37035 Santi Brogio di Valpollicci VR, Italy
+                            <br/>
+                            <span className="ms-4">3333 S. Coral Road, Napa, CA 94558</span>
                         </div>
 
                         <div className="mb-2">
                             <BsFillTelephoneFill className="me-2" /> +39.555.555.5555
+                            <br/>
+                            <span className="ms-4">+1.555.555.5555</span>
                         </div>
 
                         <div className="mb-2">

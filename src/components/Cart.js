@@ -79,7 +79,7 @@ const Cart = () => {
 
                 <Col xs={6} sm={5} xl={2} className="order-2">
                     <div className="cartItemName">{wineItem.name}</div>
-                    <div className="cartItemPrice">&#40;&euro;{wineItem.price}&#41;</div>
+                    <div className="cartItemPrice">&#40;&#36;{wineItem.price}&#41;</div>
                 </Col>
 
                 <Col xs={7} sm={6} xl={3} className="order-4 order-sm-5 order-xl-4">
@@ -92,7 +92,7 @@ const Cart = () => {
                 </Col>
 
                 <Col xs={3} sm={6} xl={2} className="order-3 order-sm-4 order-xl-3">
-                    <div className="cartItemTotal">&euro;{itemPrice}</div>
+                    <div className="cartItemTotal">&#36;{itemPrice}</div>
                 </Col>
 
                 <Col xs={2} sm={2} xl={1} className="order-5 order-sm-3 order-xl-5">
@@ -121,7 +121,7 @@ const Cart = () => {
                         </div>
         
                         <div className="mt-5 subtotalContainer d-flex flex-column">
-                            <div id="subtotal" className="mb-2"><span><strong>Subtotal:</strong></span> &euro;{cart.total}</div>
+                            <div id="subtotal" className="mb-2"><span><strong>Subtotal:</strong></span> &#36;{cart.total}</div>
                             <Button id="checkoutBtn" className="mb-2">Checkout</Button>
                             <div id="taxShipMsg">*Taxes and shipping calculated at checkout</div>
                         </div>

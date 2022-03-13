@@ -178,7 +178,7 @@ const Wine = () => {
                                         eros varius ac. Curabitur blandit porttitor 
                                     </div>
                                     
-                                    <div className="winePrice mt-2">&euro;{wine.price}</div>
+                                    <div className="winePrice mt-2">&#36;{wine.price}</div>
                                     
                                     <div className="d-flex">
                                         <div className="quantityButtons" onClick={_decrementQty}>&lt;</div>
