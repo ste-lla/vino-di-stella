@@ -44,7 +44,7 @@ const About = () => {
       }
 
     return(
-        <div className="homeContainer d-flex flex-column">
+        <div className="aboutContainer d-flex flex-column">
             <div className="nonFooterWrapper">
                 <Row>
                     <Col xs={4}>
@@ -52,9 +52,9 @@ const About = () => {
                     </Col>
                 </Row>
                 
-                <div className="mainHome mx-auto mb-2">
-                    <div className="text-center greetingHome headingFontStyle">About Us</div>
-                    <p className="infoHome">
+                <div className="mainAbout mx-auto mb-2">
+                    <div className="text-center greetingAbout headingFontStyle">About Us</div>
+                    <p className="infoAbout">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum orci quis 
                     aliquam dignissim. Nunc dictum vel erat et tempus. Aenean vel tortor eget metus 
                     dictum facilisis ac ut ante. In hac habitasse platea dictumst. Suspendisse massa 

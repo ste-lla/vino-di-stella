@@ -17,14 +17,13 @@
         background-size: cover; */    
     }
 
-   /*  .formContainer {
-        margin-top: 33.5%;
-        margin-bottom: 0%;
-    } */
+    .landPgTitle {
+        text-align: center;
+    }
 
-    form .formLabelHome {
+    form .confirmAgeMsg {
         color: whitesmoke;
-        font-size: 2rem;
+        /* font-size: 2rem; */
         letter-spacing: 0.1rem;
         font-weight: bold;
         font-family: 'Oooh Baby', cursive;
@@ -34,29 +33,26 @@
 
     }
 
-    form .enterButton {
+    form .enterBtnLanding {
         background-color: black !important;
         color: white !important;
-        font-size: 1.75rem !important;
         font-family: 'Oooh Baby', cursive !important;
         font-weight: 600;
-        width: 12rem !important;
         border: none !important;
         letter-spacing: 0.15rem !important;
         border-radius: 1rem !important;
-        
+        width: 12rem !important;
     }
 
-    form .enterButton:hover {
+    form .enterBtnLanding:hover {
         color: rgb(231, 198, 108) !important;
     }
 
-    #confirmAgeMsg {
+    #confirmAgeError {
         font-size: 2.5rem;
         color: rgb(231, 198, 108);
         font-family: 'Oooh Baby', cursive !important;
-        font-weight: 600;
-        
+        font-weight: 600;    
     }
 
 
@@ -92,11 +88,11 @@
     }
     
     .navLinks {
-        color: rgb(231, 198, 108) !important;
+        color: black !important;
     }
 
     .navLinks:hover {
-        color: black !important;
+        color: rgb(231, 198, 108) !important;
     }
 
 
@@ -106,23 +102,22 @@
 /*   HOME   */
 
     .homeContainer {
-        /* background-color: black; */
-        /* overflow: auto; */
+        background-color: black;
         height: 100vh;
         overflow-y: auto;
         overflow-x: hidden;
-        animation: changeBackgroundColor linear 2s;
-        animation-fill-mode: forwards;  
+        /* animation: changeBackgroundColor linear 2s;
+        animation-fill-mode: forwards; */  
     }
 
-    @keyframes changeBackgroundColor {
+/*     @keyframes changeBackgroundColor {
         0% {
             background-color: white;
         }
         100% {
             background-color: black;
         }
-    }
+    } */
 
     .nonFooterWrapper{
         flex: 1 0 auto;
@@ -132,20 +127,65 @@
         color: white;
         padding: 1.5rem;
         border-radius: 1rem;
-        animation: changeBorderColor linear 2s;
-        animation-fill-mode: forwards;
+        border: 3px solid rgb(231, 198, 108);
+        /* animation: changeBorderColor linear 2s;
+        animation-fill-mode: forwards; */
     }
     
-    @keyframes changeBorderColor {
+/*     @keyframes changeBorderColor {
         0% {
             border: 3px solid white; 
         }
         100% {
             border: 3px solid rgb(231, 198, 108);
         }
+    } */
+
+    .homeHeader {
+        color: white;
     }
 
-    .greetingHome {
+    .underLineWord {
+        /* color: rgb(231, 198, 108); */
+        /* background-image: linear-gradient(rgba(200, 255, 137, 0.6), rgba(200, 255, 137, 0.6)); */
+        background-image: linear-gradient(rgba(58, 186, 236, 0.6), rgba(58, 186, 236, 0.6));
+        background-size: 100% calc(1.5rem * .4);
+        background-repeat: no-repeat;
+        background-position: 0% 90%;
+    }
+
+    .homeVineyardImg {
+        width: 40rem;
+        height: auto;
+    }
+
+   .homeSubHeader1 {
+       color: white;
+   }
+
+   .homeDescription1 {
+       color: white;
+       font-size: 1.2rem;
+   }
+
+   .homeCircles {
+       width: 26rem;
+       height: 26rem;
+       background-color: rgb(231, 198, 108);
+       border-radius: 50%;
+   }
+
+   .homeVineyardImg2 {
+        height: 70vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/vineyard2Home.jpeg') no-repeat center;     
+        background-size: cover;
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+   }
+    
+
+/*     .greetingHome {
         letter-spacing: 0.25rem;
         margin-bottom: 0.75rem; 
     }
@@ -153,14 +193,14 @@
     .infoHome {
         letter-spacing: 0.1rem;  
         text-align: center;
-    }
+    } */
 
 
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ABOUT */
 
-  /*   .aboutContainer {
+    .aboutContainer {
         background-color: black;
         height: 100vh;
         overflow-y: auto;
@@ -171,10 +211,20 @@
         color: white;
         padding: 1.5rem;
         border-radius: 1rem;
-        animation: changeBorderColor linear 2s;
-        animation-fill-mode: forwards;
         overflow-y: auto;
-    } */
+        border: 3px solid rgb(231, 198, 108);
+    }
+
+    .greetingAbout {
+        letter-spacing: 0.25rem;
+        margin-bottom: 0.75rem; 
+    }
+
+    .infoAbout {
+        letter-spacing: 0.1rem;  
+        text-align: center;
+    }
+
 
    
 
@@ -447,6 +497,11 @@ button.accordion-button {
         color: white !important;
     }
 
+    /* .subtotalContainer {
+        margin-left: auto;
+        margin-right: 0;
+    } */
+
     
 
 
@@ -510,8 +565,24 @@ button.accordion-button {
         background: url('./images/landPg1.jpg') no-repeat center fixed;     
         background-size: cover;    
     }
-    .formContainer {
-        margin-top: 29rem;
+
+    .landingFormWrapper {
+        margin-top: 6.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .landPgTitle {
+        font-size: 3rem;
+        color: white;
+    }
+
+    form .confirmAgeMsg {
+        font-size: 1.2rem;
+    }
+
+    form .enterBtnLanding {
+        font-size: 1.3rem !important;   
     }
 
 
@@ -550,6 +621,15 @@ button.accordion-button {
         .mainHome {
             width: 90vw;
             margin-top: 1%;
+        }
+
+    /* ABOUT */
+        .mainAbout {
+            width: 90vw;
+            margin-top: 1%;
+        }
+        .greetingAbout {
+            font-size: 1.75rem;  
         }
     
     /* CART */
@@ -596,7 +676,6 @@ button.accordion-button {
         }
        
 
-    
     /* FOOTER */
         .footerLftCol {
             margin-bottom: 30px;
@@ -619,19 +698,28 @@ button.accordion-button {
 
 /* MIN WIDTH 320px */
 @media only screen and (min-width: 320px) {
-    /* LANDING */
-        .formContainer {
-            margin-top: 17rem;
+    /* LANDING */ 
+        .landingFormWrapper {
+            margin-top: 13.5rem;
+        } 
+        .landPgTitle {
+            color: black;
         }
+        form .confirmAgeMsg {
+            font-size: 1.33rem;
+        }
+    
+        form .enterBtnLanding {
+            font-size: 1.375rem !important;   
+        }
+
     /* LOGIN */
         #loginTitle {
             margin-top: 35%;
         }
 
         .landPgTitle {
-            color: black;
-            font-size: 4rem;
-            text-align: center;
+            font-size: 3.5rem;
         }
 
     /* HOME */
@@ -675,6 +763,52 @@ button.accordion-button {
 
 
 
+/* SAMSUNG GALAXY WIDTH 412px HEIGHT 914 */
+@media only screen and (width: 412px) and (height: 914px) {
+    /* LANDING */
+        .landingFormWrapper {
+            margin-top: 19.5rem;
+        }
+
+        .landPgTitle {
+            color: black;
+            font-size: 3.5rem;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 1.5rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.5rem !important;   
+        }
+}
+
+
+
+
+/* MIN WIDTH 414px */
+@media only screen and (min-width: 414px) {
+    /* LANDING */
+        .landingFormWrapper {
+            margin-top: 16.5rem;
+        }
+
+        .landPgTitle {
+            color: black;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 1.33rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.375rem !important;   
+        }
+}
+
+
+
 /* MIN WIDTH 500px */
 @media only screen and (min-width: 500px) {
     /* LOGIN */
@@ -699,12 +833,27 @@ button.accordion-button {
 
 
 
+
 /* MIN WIDTH 576px */
 @media only screen and (min-width: 576px) {
     /* LANDING */
-    /* .formContainer {
-        margin-top: 29rem;
-    } */
+        .landingFormWrapper {
+            margin-top: 17.5rem;
+        }
+
+        .landPgTitle {
+            font-size: 4rem;
+            color: black;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 1.46rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.45rem !important;   
+        }
+   
 
     /* LOGIN */
         .loginForm {
@@ -827,13 +976,25 @@ button.accordion-button {
         .landPgTitle {
             display: none;
         }
-        .formContainer {
-            margin-top: 29rem;
-        }
+
         .landingContainer {
             background: url('./images/desertBWRainWithLogo.jpg') no-repeat center fixed;     
             background-size: cover;    
         }
+
+        .landingFormWrapper {
+            margin-top: 30rem;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 1.59rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.625rem !important;   
+        }
+
+
     /* LOGIN */
         .loginForm {
             margin-left: 22%;
@@ -854,7 +1015,12 @@ button.accordion-button {
     /* HOME */
         .mainHome {
             width: 75vw;
-            /* margin-top: 0%; */
+        }
+
+    /* ABOUT */
+
+        .mainAbout {
+            width: 75vw;
         }
 
         .greetingHome {
@@ -945,58 +1111,168 @@ button.accordion-button {
 
 /* iPAD MINI - WIDTH 768px HEIGHT 1024px */
 @media only screen and (width: 768px) and (height: 1024px) {
-    .mainHome {
-        margin-top: 15%;
-        width: 80vw;
-    }
-    .infoHome {
-        font-size: 1.35rem;
-    }
-    .cartHeadingEmpty {
-        margin-top: 20vh;
-    }
+    /* LANDING */
+        .landingContainer {
+            background: url('./images/landPg1.jpg') no-repeat center fixed;     
+            background-size: cover;    
+        }
+
+        .landPgTitle {
+            display: block;
+            font-size: 6.25rem;
+        }
+
+        .landingFormWrapper {
+            margin-top: 23rem;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 2.3rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 2.5rem !important;   
+        }
+    /* HOME */
+        .mainHome {
+            margin-top: 15%;
+            width: 80vw;
+        }
+        .infoHome {
+            font-size: 1.35rem;
+        }
+
+    /* ABOUT */
+        .mainAbout {
+            margin-top: 15%;
+            width: 80vw;
+        }
+        .infoAbout {
+            font-size: 1.35rem;
+        }
+
+    /* CART */
+        .cartHeadingEmpty {
+            margin-top: 20vh;
+        }
 }
 
 
 /* iPAD AIR - WIDTH 820px HEIGHT 1180px */
 @media only screen and (width: 820px) and (height: 1180px) {
-    .mainHome {
-        margin-top: 20%;
-        width: 80vw;
-    }
-    .infoHome {
-        font-size: 1.45rem;
-    }
-    .cartHeadingEmpty {
-        margin-top: 20vh;
-    }
+    /* LANDING */
+        .landingContainer {
+            background: url('./images/landPg1.jpg') no-repeat center fixed;     
+            background-size: cover;    
+        }
+
+        .landPgTitle {
+            display: block;
+            font-size: 6.25rem;
+        }
+
+        .landingFormWrapper {
+            margin-top: 27rem;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 2.3rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 2.5rem !important;   
+        }
+
+    /* HOME */
+        .mainHome {
+            margin-top: 20%;
+            width: 80vw;
+        }
+        .infoHome {
+            font-size: 1.45rem;
+        }
+    
+    /* ABOUT */
+        .mainAbout {
+            margin-top: 20%;
+            width: 80vw;
+        }
+        .infoAbout {
+            font-size: 1.45rem;
+        }
+
+    /* CART */
+        .cartHeadingEmpty {
+            margin-top: 20vh;
+        }
 }
 
 
 /* SURFACE PRO 7 - WIDTH 912px HEIGHT 1368px */
 @media only screen and (width: 912px) and (height: 1368px) {
-    .mainHome {
-        margin-top: 25%;
-        width: 80vw;
-    }
-    .greetingHome {
-        font-size: 2.55rem;  
-    }
-    .infoHome {
-        font-size: 1.55rem;
-    }
-    .cartHeadingEmpty {
-        margin-top: 25vh;
-    }
+    /* LANDING */
+        .landingContainer {
+            background: url('./images/landPg1.jpg') no-repeat center fixed;     
+            background-size: cover;    
+        }
+
+        .landPgTitle {
+            display: block;
+            font-size: 7.25rem;
+        }
+
+        .landingFormWrapper {
+            margin-top: 33rem;
+        }
+
+        form .confirmAgeMsg {
+            font-size: 2.7rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 2.8rem !important;   
+        }
+    /* HOME */
+        .mainHome {
+            margin-top: 25%;
+            width: 80vw;
+        }
+        .greetingHome {
+            font-size: 2.55rem;  
+        }
+        .infoHome {
+            font-size: 1.55rem;
+        }
+
+    /* ABOUT */
+        .mainAbout {
+            margin-top: 25%;
+            width: 80vw;
+        }
+        .greetingAbout {
+            font-size: 2.55rem;  
+        }
+        .infoAbout {
+            font-size: 1.55rem;
+        }
+
+    /* CART */
+        .cartHeadingEmpty {
+            margin-top: 25vh;
+        }
 }
 
 
 /* MIN WIDTH 992px */
 @media only screen and (min-width: 992px) {
     /* LANDING */
-   /*  .formContainer {
-        margin-top: 29rem;
-    } */
+        form .confirmAgeMsg {
+            font-size: 1.72rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.7rem !important;   
+        }
     
     /* LOGIN */
         .loginForm {
@@ -1107,6 +1383,11 @@ button.accordion-button {
 
 /* (NEST HUB) WIDTH 1024px / HEIGHT 600px  */
 @media only screen and (width: 1024px) and (height: 600px) {
+    /* LANDING */
+    .landingFormWrapper {
+        margin-top: 23rem;
+    }
+
     /* LOGIN */
         #loginTitle {
             margin-top: 12%;   
@@ -1131,9 +1412,14 @@ button.accordion-button {
 /* MIN WIDTH 1200px */
 @media only screen and (min-width: 1200px) {
     /* LANDING */
-    /* .formContainer {
-        margin-top: 29rem;
-    } */
+        form .confirmAgeMsg {
+            font-size: 1.85rem;
+        }
+
+        form .enterBtnLanding {
+            font-size: 1.75rem !important;   
+        }
+    
 
     /* LOGIN */
         .loginForm {
@@ -1166,6 +1452,19 @@ button.accordion-button {
         }
 
         .infoHome {
+            font-size: 1.40rem;
+        }
+
+    /* ABOUT */
+        .mainAbout {
+            width: 60vw;
+            margin-top: 2%;
+        }
+        .greetingAbout {
+            font-size: 3.25rem;  
+        }
+
+        .infoAbout {
             font-size: 1.40rem;
         }
 
@@ -1265,9 +1564,10 @@ button.accordion-button {
 /* MIN WIDTH 1400px */
 @media only screen and (min-width: 1400px) {
     /* LANDING */
-    /* .formContainer {
-        margin-top: 29rem;
-    } */
+        form .confirmAgeMsg {
+            font-size: 2rem;
+        }
+ 
 
     /* LOGIN */
         #loginTitle {

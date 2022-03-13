@@ -120,7 +120,7 @@ const Cart = () => {
                             {allCartItems}
                         </div>
         
-                        <div className="mt-5 subtotalContainer">
+                        <div className="mt-5 subtotalContainer d-flex flex-column">
                             <div id="subtotal" className="mb-2"><span><strong>Subtotal:</strong></span> &euro;{cart.total}</div>
                             <Button id="checkoutBtn" className="mb-2">Checkout</Button>
                             <div id="taxShipMsg">*Taxes and shipping calculated at checkout</div>

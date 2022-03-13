@@ -27,17 +27,17 @@ const Landing = () => {
     }
     return (
         <div className="landingContainer d-flex justify-content-center">
-            <div className="formContainer">
+            <div className="landingFormWrapper">
                 <Form className="d-flex flex-column">
                     <div className="landPgTitle">Vino Di Stella</div>
-                    <Form.Group className="mb-3 formLabelHome" controlId="formBasicCheckbox">
+                    <Form.Group className="mb-3 confirmAgeMsg" controlId="formBasicCheckbox">
                         <Form.Check onChange={_handleVerify} type="checkbox" label="Confirm You Are 21 Or Older Before Entering" name="confirmAge" />
                     </Form.Group>
-                    <Button type="submit" className="enterButton mx-auto" onClick={_handleSubmit}>
+                    <Button type="submit" className="enterBtnLanding mx-auto" onClick={_handleSubmit}>
                         ENTER
                     </Button>
                 </Form>
-                <div id="confirmAgeMsg" className="text-center mt-3">{confirmAge}</div>
+                <div id="confirmAgeError" className="text-center mt-3">{confirmAge}</div>
             </div>
         </div>
     ); 
