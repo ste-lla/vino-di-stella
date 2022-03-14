@@ -8,20 +8,20 @@ import WineBottle from '../images/wineBot.jpeg';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useSelector } from "react-redux";
-//import { addToCart } from '../features/cart';
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from '../features/cart';
 import Footer from './Footer';
 
 const Wine = () => {
     const [quantity, setQuantity] = useState(0);
-    //const[qtyLimitMsg, setQtyLimitMsg] = useState('');
-    //const [itemAddedMsg, setItemAddedMsg] = useState('');
-    //const[outOfStock, setOutOfStock] = useState('');
+    const[qtyLimitMsg, setQtyLimitMsg] = useState('');
+    const [itemAddedMsg, setItemAddedMsg] = useState('');
+    const[outOfStock, setOutOfStock] = useState('');
     
     //Redux
     const wine = useSelector(state => state.inventory.value);
-    //const cart = useSelector(state => state.cart.value.cart)
-    //const dispatch = useDispatch(state => state.cart.value);
+    const cart = useSelector(state => state.cart.value.cart)
+    const dispatch = useDispatch(state => state.cart.value);
 
     //console.log(quantity);
 
@@ -63,7 +63,7 @@ const Wine = () => {
             setQuantity(quantity + 1);
         }
         else {
-            //setQtyLimitMsg("*Max quantity reached. Please contact us if you're interested in purchasing more.");
+            setQtyLimitMsg("*Max quantity reached. Please contact us if you're interested in purchasing more.");
         }
     }
 
@@ -72,12 +72,12 @@ const Wine = () => {
         if(quantity !== 0) {
             setQuantity(quantity - 1);
         } 
-        //setQtyLimitMsg('');
+        setQtyLimitMsg('');
     }
 
 
     // ADD ITEMS TO CART
-/*     let _handleAddToCart = (e) => {
+    let _handleAddToCart = (e) => {
         if(quantity === 0) {
             setItemAddedMsg('Please select a quantity');
         }
@@ -87,12 +87,12 @@ const Wine = () => {
     
             let accordionItem = e.target.parentElement.parentElement.parentElement.parentElement;
            
-            let wineId = parseInt(accordionItem.id);
+            let wineId = Number(accordionItem.id);
             let wineName = accordionItem.querySelector('.wineName').textContent;
             let price = accordionItem.querySelector('.winePrice').textContent;
             let priceNum = Number(price.slice(1));
     
-            const cartItemOverQty = cart.find(cartItem => wineId === cartItem.id && cartItem.quantity + quantity > 10);
+            const cartItemOverQty = cart.find(cartItem => cartItem.id === wineId && cartItem.quantity + quantity > 10);
             const wineItem = wine.inventory.find((wine => wine.id === wineId));
             const cartItem = cart.find(cartItem => cartItem.id === wineId);
     
@@ -101,7 +101,7 @@ const Wine = () => {
                 setQtyLimitMsg('Qty limit of 10 reached for this item');
                 setTimeout(function() {
                     setQtyLimitMsg('');
-                }, 8000);
+                }, 6000);
             }
             else {
                 //if wineItem selected is already in cart --> check inventory to verify wineItem qty >= asking qty && asking qty + qty already in cart for this wineItem
@@ -111,8 +111,8 @@ const Wine = () => {
                         dispatch(addToCart({
                             id: wineId,
                             name: wineName,
-                            price: Number(priceNum),
-                            quantity: Number(quantity)   //from the useState quantity variable I defined
+                            price: priceNum,
+                            quantity: quantity   //from the useState quantity variable I defined
                         }))
                         
                         setItemAddedMsg('Added!');
@@ -125,7 +125,7 @@ const Wine = () => {
                         setOutOfStock('Insufficient stock. Please select a lesser qty or contact us directly.');
                         setTimeout(function() {
                             setOutOfStock('');
-                        }, 8000)
+                        }, 6000)
                     }
                 } else { 
                     //if wineItem selected is not yet in cart --> check inventory to verify wineItem qty >= asking qty
@@ -148,13 +148,13 @@ const Wine = () => {
                         setOutOfStock('Insufficient stock. Please select a lesser qty or contact us directly.');
                         setTimeout(function() {
                             setOutOfStock('');
-                        }, 8000)
+                        }, 6000)
                     }
                 }
             }
 
         }
-    } */
+    }
 
 
     let wineAndDetails = wine.inventory.map((wine) => {
@@ -185,11 +185,11 @@ const Wine = () => {
                                     </div>
                                     
                                     <div className="d-flex">
-                                        <Button className="addCartBtn mt-3">Add To Cart</Button>
-                                        {/* <div className="mt-4 ms-3" id="addedMsg">{itemAddedMsg}</div> */}
+                                        <Button className="addCartBtn mt-3" onClick={_handleAddToCart}>Add To Cart</Button>
+                                        <div className="mt-4 ms-3" id="addedMsg">{itemAddedMsg}</div>
                                     </div>
 
-                                    {/* <div className="mt-2">{qtyLimitMsg}{outOfStock}</div> */}
+                                    <div className="mt-2">{qtyLimitMsg}{outOfStock}</div>
                                 </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>  

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
-//import WineBottle1 from '../images/wine1.jpeg';
 import WineBottle from '../images/wineBot.jpeg';
 import { Link } from 'react-router-dom';
 import { BsTrash2Fill } from 'react-icons/bs';
@@ -20,13 +19,15 @@ const Cart = () => {
     console.log(cart);
 
     let allCartItems = cart.cart.map((wineItem) => {
+        //Using this to display total item price (item price * item qty in cart)
         let itemPrice = wineItem.price * wineItem.quantity;
+        
         //console.log(`outsideFunc: ${wineItem.quantity}`);
         //console.log(Number(wineItem.quantity));
         
         //Increase QTY Btn (+)
         let _incrementQty = (e) => {
-            const selectedWineId = parseInt(e.target.parentElement.id);
+            const selectedWineId = Number(e.target.parentElement.id);
             const wineFound = wine.inventory.find((wine => wine.id === selectedWineId));
             
             //Ensure user does not select more than 10 qty. 10 is the max
@@ -35,7 +36,7 @@ const Cart = () => {
                 if(wineFound.quantity >= wineItem.quantity + 1) {
                     dispatch(incCartQty({
                         id: selectedWineId,
-                        quantity: Number(wineItem.quantity + 1)
+                        quantity: wineItem.quantity + 1
                     }))
                 }
                 else {
@@ -43,7 +44,7 @@ const Cart = () => {
     
                     setTimeout(function() {
                         setOutOfStock('');
-                    }, 8000);
+                    }, 6000);
                 }
             //Else, alert user max qty reached. 10 is the max   
             } else { 
@@ -51,25 +52,29 @@ const Cart = () => {
 
                 setTimeout(function() {
                     setQtyLimitMsg('');
-                }, 8000);
+                }, 6000);
             }
         }
 
+
         //Decrease QTY Btn (-)
         let _decrementQty = (e) => {
-            const selectedWineId = parseInt(e.target.parentElement.id);
+            const selectedWineId = Number(e.target.parentElement.id);
+            
             if(wineItem.quantity !== 1) {
                 dispatch(decCartQty({
                     id: selectedWineId,
-                    quantity: Number(wineItem.quantity - 1)
+                    quantity: wineItem.quantity - 1
                 }))
             }
         }
+
 
         //Remove Item From Cart
         let _removeCartItem = () => {
             dispatch(removeFromCart(wineItem));
         }
+
 
         return(
             <Row key={wineItem.id} className="mt-4">

@@ -111,7 +111,7 @@ const Home = () => {
                             Thursday-Sunday from 11am-4:30pm. Each tour is around 30 min and begins
                             with an introduction to the history of our company and spectacular wine
                             making process. You will then have a chance try each of our wines paired
-                            with a appetizer specially picked to pair with your current wine sample. 
+                            with an appetizer specially picked to pair with your current wine sample. 
                         </div>
                         <div id="ageReqrmntMsg" className="p-3" style={{color: "white"}}>*Must be 21 or older to participate. I.D is required before entry</div>
                     </Col>
@@ -125,13 +125,13 @@ const Home = () => {
 
                 <Row className="mt-5">
                     <Col className="d-flex justify-content-center align-items-center accomplishmentsWrapper">
-                        <div className="accomplishments text-center">
+                        <div className="accomplishments text-center m-3">
                             <h2 id="accompTitle" className="headingFontStyle">Our Humble Accomplishments</h2>
                             Named Wine of the Year by Fancy Italian Wine Magazine
                             <br/>
                             Voted #1 Wine by Wonderful Wines of the World LLC
                             <br />
-                            "Hands down best wine I've ever tasted!" -Amaril Logosse
+                            "Hands down, top 3 best wines I've ever tasted!" -Amaril Logosse
                         </div>
                     </Col>
                 </Row>
