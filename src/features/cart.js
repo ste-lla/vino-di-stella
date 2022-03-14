@@ -18,6 +18,12 @@ export const cartSlice = createSlice({
         addToCart: (state, action) => {
             let cartItem = state.value.cart.find((item) => item.id === action.payload.id);
 
+            state.value.cartCount = Number(state.value.cartCount);
+            state.value.total = Number(state.value.total);
+
+            console.log(state.value.cartCount);
+            console.log(state.value.total);
+
             if(cartItem) {
                 state.value.cart = [...state.value.cart];
                 cartItem.quantity += action.payload.quantity;
@@ -63,6 +69,9 @@ export const cartSlice = createSlice({
         decCartQty: (state, action) => {
             let cartItem = state.value.cart.find((item) => item.id === action.payload.id);
 
+            state.value.cartCount = Number(state.value.cartCount);
+            state.value.total = Number(state.value.total);
+
             state.value.cart = [...state.value.cart];
             cartItem.quantity = action.payload.quantity;
             state.value.cartCount -= 1;
@@ -91,6 +100,6 @@ export const cartSlice = createSlice({
     }
 })
 
-export const {addToCart, incCartQty, decCartQty, removeFromCart  } = cartSlice.actions;
+export const { addToCart, incCartQty, decCartQty, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

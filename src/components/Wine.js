@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
-//import WineBottle1 from '../images/wine1.jpeg';
 import WineBottle from '../images/wineBot.jpeg';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
@@ -110,12 +109,12 @@ const Wine = () => {
                 if(cartItem) {
                     if(wineItem.quantity >= quantity && wineItem.quantity >= cartItem.quantity + quantity) {
                         setQtyLimitMsg('');
-                        dispatch(addToCart({
+                        /* dispatch(addToCart({
                             id: wineId,
                             name: wineName,
-                            price: priceNum,
-                            quantity: quantity   //from the useState quantity variable I defined
-                        }))
+                            price: Number(priceNum),
+                            quantity: Number(quantity)   //from the useState quantity variable I defined
+                        })) */
                         
                         setItemAddedMsg('Added!');
                 
@@ -133,12 +132,12 @@ const Wine = () => {
                     //if wineItem selected is not yet in cart --> check inventory to verify wineItem qty >= asking qty
                     if(wineItem.quantity >= quantity) {
                         setQtyLimitMsg('');
-                        dispatch(addToCart({
+                        /* dispatch(addToCart({
                             id: wineId,
                             name: wineName,
                             price: priceNum,
                             quantity: quantity   //from the useState quantity variable I defined
-                        }))
+                        })) */
                         
                         setItemAddedMsg('Added!');
                 
