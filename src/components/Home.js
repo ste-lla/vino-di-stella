@@ -118,7 +118,7 @@ const Home = () => {
 
                     <Col xs={12} md={6} className="order-1 order-md-2">
                         <div className="homeCircles winePourImg headingFontStyle mx-auto d-flex justify-content-center align-items-center">
-                            Wine Tours and Tastings
+                            <span id="wineTours">Wine Tours and Tastings</span>
                         </div>
                     </Col>
                 </Row>

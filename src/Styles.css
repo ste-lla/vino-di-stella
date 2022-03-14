@@ -149,8 +149,7 @@
 
     .homeInfoTxt {
         color: white;
-        /* font-size: 1.3rem; */
-     }
+    }
 
     #ageReqrmntMsg {
         font-size: 1rem;
@@ -195,28 +194,45 @@
         overflow-x: hidden; 
     }
 
-    .mainAbout {
+    .aboutUsMainImg {
+        height: 100vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/vinyardAbout.jpeg') no-repeat center;     
+        background-size: cover;
+    }
+
+    .ourStoryHeaders {
         color: white;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        overflow-y: auto;
-        border: 3px solid rgb(231, 198, 108);
+        font-weight: bold;
     }
 
-    .greetingAbout {
-        letter-spacing: 0.25rem;
-        margin-bottom: 0.75rem; 
+    .aboutCircles {   
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+     }
+
+    .ourHistoryImg {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/tractorAbout.jpeg') no-repeat center;  
+        background-size: cover;
     }
 
-    .infoAbout {
-        letter-spacing: 0.1rem;  
-        text-align: center;
+    .ourVinesImg {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/grapesAbout.jpeg') no-repeat center;  
+        background-size: cover;
+    }
+
+    .aboutInfoTxt {
+        color: white;
+    }
+
+    .aboutUsImg2 {
+        height: 70vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/wineOceanBkgrd.jpeg') no-repeat center;     
+        background-size: cover;
     }
 
 
-   
-
-
+ 
 /* ---------------------------------------------------------------------------------------------- */
 
 
@@ -622,6 +638,10 @@ button.accordion-button {
             font-size: 1.2rem;
         }
 
+        #wineTours {
+            padding-left: 1rem;
+        }
+
         #accompTitle {
             font-size: 1.6rem;
             font-weight: bold;
@@ -629,23 +649,36 @@ button.accordion-button {
 
         #visitUs {
             font-size: 1.65rem;
-            /* text-align: center; */
+            padding-left: 1rem;
         }
     
         #hoursOfOp {
             font-size: 1.1rem;
-            /* text-align: center; */
+            padding-left: 1rem;
         }
 
 
     /* ABOUT */
-        .mainAbout {
-            width: 90vw;
-            margin-top: 1%;
+
+        .aboutCircles {  
+            width: 88vw;
+            height: 88vw; 
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        .greetingAbout {
-            font-size: 1.75rem;  
+
+        .aboutInfoTxt {
+            font-size: 1.2rem;
         }
+
+        .ourStoryHeaders {
+            font-size: 3rem;
+            padding-left: 1rem;
+        }
+
+        
+
+
     
     /* CART */
         .cartHeadingEmpty {
@@ -738,6 +771,9 @@ button.accordion-button {
         }
 
     /* HOME */
+        #wineTours {
+            padding-left: 0rem;
+        }
 
     
     /* CART */
@@ -816,10 +852,18 @@ button.accordion-button {
         }
     
     /* HOME */
-    .homeCircles { 
-        width: 80vw;
-        height: 80vw; 
-    }
+        .homeCircles { 
+            width: 80vw;
+            height: 80vw; 
+        }
+
+    
+    /* ABOUT */
+        .aboutCircles { 
+            width: 80vw;
+            height: 80vw; 
+        }
+
 }
 
 
@@ -915,10 +959,24 @@ button.accordion-button {
 
         #visitUs {
             font-size: 1.87rem;
+            padding-left: 0rem;
         }
     
         #hoursOfOp {
             font-size: 1.18rem;
+            padding-left: 0rem;
+        }
+
+    
+    /* ABOUT */
+        .aboutCircles {  
+            width: 70vw;
+            height: 70vw; 
+        }
+
+        .ourStoryHeaders {
+            font-size: 3.4rem;
+            padding-left: 0rem;
         }
 
 
@@ -1064,6 +1122,7 @@ button.accordion-button {
             height: 43vw;  
         }
 
+
         .homeInfoTxt {
             font-size: 1.3rem;
         }
@@ -1086,18 +1145,19 @@ button.accordion-button {
 
 
     /* ABOUT */
-
-        .mainAbout {
-            width: 75vw;
+        .aboutCircles { 
+            width: 43vw;
+            height: 43vw;  
         }
 
-        .greetingAbout {
-            font-size: 2.65rem;  
+        .aboutInfoTxt {
+            font-size: 1.3rem;
         }
 
-        .infoAbout {
-            font-size: 1.24rem;
+        .ourStoryHeaders {
+            font-size: 3.8rem;
         }
+
 
     /* CART */
         .startShopBtn {
@@ -1205,13 +1265,8 @@ button.accordion-button {
 
 
     /* ABOUT */
-        .mainAbout {
-            margin-top: 15%;
-            width: 80vw;
-        }
-        .infoAbout {
-            font-size: 1.35rem;
-        }
+
+
 
     /* CART */
         .cartHeadingEmpty {
@@ -1249,13 +1304,8 @@ button.accordion-button {
 
     
     /* ABOUT */
-        .mainAbout {
-            margin-top: 20%;
-            width: 80vw;
-        }
-        .infoAbout {
-            font-size: 1.45rem;
-        }
+
+
 
     /* CART */
         .cartHeadingEmpty {
@@ -1292,16 +1342,7 @@ button.accordion-button {
 
 
     /* ABOUT */
-        .mainAbout {
-            margin-top: 25%;
-            width: 80vw;
-        }
-        .greetingAbout {
-            font-size: 2.55rem;  
-        }
-        .infoAbout {
-            font-size: 1.55rem;
-        }
+
 
     /* CART */
         .cartHeadingEmpty {
@@ -1355,6 +1396,18 @@ button.accordion-button {
     
         #hoursOfOp {
             font-size: 1.34rem;
+        }
+
+
+    /* ABOUT */
+        .aboutCircles { 
+            width: 37vw;
+            height: 37vw; 
+            font-size: 1.7rem;
+        }
+
+        .ourStoryHeaders {
+            font-size: 4.2rem;
         }
 
 
@@ -1526,17 +1579,21 @@ button.accordion-button {
 
 
     /* ABOUT */
-        .mainAbout {
-            width: 60vw;
-            margin-top: 2%;
-        }
-        .greetingAbout {
-            font-size: 3.25rem;  
+        .aboutCircles { 
+            width: 31vw;
+            height: 31vw; 
+            font-size: 1.8rem;
         }
 
-        .infoAbout {
-            font-size: 1.40rem;
+        .aboutInfoTxt {
+            font-size: 1.4rem;
         }
+
+        .ourStoryHeaders {
+            font-size: 4.6rem;
+        }
+
+
 
     /* CART */
         .startShopBtn {
@@ -1673,6 +1730,19 @@ button.accordion-button {
     
         #hoursOfOp {
             font-size: 1.5rem;
+        }
+
+    
+    /* ABOUT */
+
+        .aboutCircles { 
+            width: 29vw;
+            height: 29vw; 
+            font-size: 1.95rem;
+        }
+
+        .ourStoryHeaders {
+            font-size: 5rem;
         }
 
 
