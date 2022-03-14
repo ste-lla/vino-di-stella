@@ -8,20 +8,20 @@ import WineBottle from '../images/wineBot.jpeg';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from '../features/cart';
+import { useSelector } from "react-redux";
+//import { addToCart } from '../features/cart';
 import Footer from './Footer';
 
 const Wine = () => {
     const [quantity, setQuantity] = useState(0);
-    const[qtyLimitMsg, setQtyLimitMsg] = useState('');
-    const [itemAddedMsg, setItemAddedMsg] = useState('');
-    const[outOfStock, setOutOfStock] = useState('');
+    //const[qtyLimitMsg, setQtyLimitMsg] = useState('');
+    //const [itemAddedMsg, setItemAddedMsg] = useState('');
+    //const[outOfStock, setOutOfStock] = useState('');
     
     //Redux
     const wine = useSelector(state => state.inventory.value);
-    const cart = useSelector(state => state.cart.value.cart)
-    const dispatch = useDispatch(state => state.cart.value);
+    //const cart = useSelector(state => state.cart.value.cart)
+    //const dispatch = useDispatch(state => state.cart.value);
 
     //console.log(quantity);
 
@@ -49,7 +49,6 @@ const Wine = () => {
                         <li><Link className="navLinks" to="/cart">Cart</Link></li>
                         <li><Link className="navLinks" to="/login">Login</Link></li>
                         <li><Link className="navLinks" to="/register">Register</Link></li>
-                        {/* <li><Link className="navLinks" to="/contact">Contact Us</Link></li> */}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -64,7 +63,7 @@ const Wine = () => {
             setQuantity(quantity + 1);
         }
         else {
-            setQtyLimitMsg("*Max quantity reached. Please contact us if you're interested in purchasing more.");
+            //setQtyLimitMsg("*Max quantity reached. Please contact us if you're interested in purchasing more.");
         }
     }
 
@@ -73,12 +72,12 @@ const Wine = () => {
         if(quantity !== 0) {
             setQuantity(quantity - 1);
         } 
-        setQtyLimitMsg('');
+        //setQtyLimitMsg('');
     }
 
 
     // ADD ITEMS TO CART
-    let _handleAddToCart = (e) => {
+/*     let _handleAddToCart = (e) => {
         if(quantity === 0) {
             setItemAddedMsg('Please select a quantity');
         }
@@ -109,12 +108,12 @@ const Wine = () => {
                 if(cartItem) {
                     if(wineItem.quantity >= quantity && wineItem.quantity >= cartItem.quantity + quantity) {
                         setQtyLimitMsg('');
-                        /* dispatch(addToCart({
+                        dispatch(addToCart({
                             id: wineId,
                             name: wineName,
                             price: Number(priceNum),
                             quantity: Number(quantity)   //from the useState quantity variable I defined
-                        })) */
+                        }))
                         
                         setItemAddedMsg('Added!');
                 
@@ -132,12 +131,12 @@ const Wine = () => {
                     //if wineItem selected is not yet in cart --> check inventory to verify wineItem qty >= asking qty
                     if(wineItem.quantity >= quantity) {
                         setQtyLimitMsg('');
-                        /* dispatch(addToCart({
+                        dispatch(addToCart({
                             id: wineId,
                             name: wineName,
                             price: priceNum,
                             quantity: quantity   //from the useState quantity variable I defined
-                        })) */
+                        }))
                         
                         setItemAddedMsg('Added!');
                 
@@ -155,7 +154,7 @@ const Wine = () => {
             }
 
         }
-    }
+    } */
 
 
     let wineAndDetails = wine.inventory.map((wine) => {
@@ -186,11 +185,11 @@ const Wine = () => {
                                     </div>
                                     
                                     <div className="d-flex">
-                                        <Button className="addCartBtn mt-3" onClick={_handleAddToCart}>Add To Cart</Button>
-                                        <div className="mt-4 ms-3" id="addedMsg">{itemAddedMsg}</div>
+                                        <Button className="addCartBtn mt-3">Add To Cart</Button>
+                                        {/* <div className="mt-4 ms-3" id="addedMsg">{itemAddedMsg}</div> */}
                                     </div>
 
-                                    <div className="mt-2">{qtyLimitMsg}{outOfStock}</div>
+                                    {/* <div className="mt-2">{qtyLimitMsg}{outOfStock}</div> */}
                                 </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>  
