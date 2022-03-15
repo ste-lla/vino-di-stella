@@ -104,6 +104,7 @@
 
     .homeContainer {
         background-color: black;
+        /* background-color: rgb(11, 11, 11); */
         height: 100vh;
         overflow-y: auto;
         overflow-x: hidden; 
@@ -118,6 +119,9 @@
         color: white;
     }
 
+    .homeVineyardImg {
+        border-radius: 1rem;
+    }
 
     .underLineWord {
         /* background-image: linear-gradient(rgba(58, 186, 236, 0.6), rgba(58, 186, 236, 0.6)); */
@@ -247,7 +251,9 @@
 
     .wineContainer {
         height: 100vh;
-        background-color: black;
+        /* background-color: black; */
+        /* background-color: rgb(26, 26, 26); */
+        background-color: rgb(14, 13, 13);
         overflow-y: scroll;
         overflow-x: hidden;
 
@@ -255,6 +261,18 @@
 
     .wineWrapper {
         flex: 1 0 auto;
+    }
+
+    .mainWine {
+        /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('./images/greyPtrn.jpeg') no-repeat center; */  
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/bwWood.jpeg') no-repeat center;  
+        background-size: cover;
+        border-radius: 1rem;
+        padding-top: 1rem;
+    }
+
+    .wineBottleImg {
+        border-radius: 1rem;
     }
 
 
@@ -411,15 +429,38 @@ button.accordion-button {
         filter: grayscale(100%);
     }
 
+    .fullCartMain {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/greyTexture.jpeg') no-repeat center;     
+        background-size: cover; 
+    }
+
     .cartMain {
+        /* background-color: rgba(76, 76, 78, 0.8); */
+        background-color: rgba(27, 27, 27, 0.7);
         color: white;
         padding: 1.5rem;
         border-radius: 1rem;
-        border: 3px solid rgb(231, 198, 108);
-        overflow-y: auto;
-        /* width: 70vw;
-        height: 70vh; */
-        /* background-color: #6b6f75; */   
+        border: 3px solid black;
+        overflow-y: auto; 
+        scrollbar-color: white rgba(27, 27, 27, 0.7);
+    }
+
+    .cartMain::-webkit-scrollbar {
+        height: 12px;
+        width: 12px;
+        background: rgba(27, 27, 27, 0.7);
+    }
+    
+    .cartMain::-webkit-scrollbar-thumb {
+        background: white;
+        -webkit-border-radius: 1rem;
+        /* -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75); */
+    }
+    
+    .cartMain::-webkit-scrollbar-corner {
+        background: rgba(27, 27, 27, 0.7);;
     }
 
     .cartHeadingEmpty {
@@ -435,39 +476,29 @@ button.accordion-button {
     }
 
     .startShopBtn {
-        /* background-color: rgb(231, 198, 108) !important; */
-        /* border: 1px solid rgb(231, 198, 108) !important; */
         background-color: black !important;
         border: 1px solid white !important;
         color: white !important;
         border-radius: 1rem !important;
     }
+
     .startShopBtn:hover {
         background-color: white !important;
         color: black !important;
     }
 
-    .cartMain::-webkit-scrollbar {
-        background-color: black;
-        border-radius: 1em;
+    .rtnHomeLinkCart {
+        font-size: 1.3rem;
+        color: white;
+        font-weight: bolder;
     }
 
-    /* .cartMain::-webkit-scrollbar-thumb {
-        background-color: blue !important;    
-    } */
-
-    /* .cartImg {
-        width: 10vw;
-        height: auto;
-    } */
-
-
-    .cartItemName {
-        /* font-size: 1.3rem; */
+    .rtnHomeLinkCart:hover {
+        color: black;
     }
 
-    .cartItemPrice {
-        /* font-size: 1.1rem; */
+    .cartImg {
+        border-radius: 1rem;
     }
 
     .cartQtyBtns {
@@ -477,17 +508,9 @@ button.accordion-button {
         font-weight: bold;
         text-align: center;
         margin-top: 0.6rem;
-        /* 
-        width: 25px;
-        height: 21px; */
-    }
-
-    .cartItemTotal {
-        /* font-size: 1.25rem; */
     }
 
     .trashCan{
-        /* font-size: 1.3rem; */
         color: white;
     }
 
@@ -497,11 +520,11 @@ button.accordion-button {
     }
 
     .cartContShpLink {
-        color: rgb(231, 198, 108) !important;
+        color: white !important;
     }
 
     .cartContShpLink:hover {
-        color: white !important;
+        color: rgb(231, 198, 108) !important;
     }
     
     .cartWarningMsg {
@@ -509,12 +532,9 @@ button.accordion-button {
 
     }
 
-    #subtotal {
-    }
-
     #checkoutBtn {
-        background-color: rgb(231, 198, 108) !important;
-        color: black !important;
+        background-color: black !important;
+        color: white !important;
         border: none;
     }
 
@@ -522,13 +542,7 @@ button.accordion-button {
         color: white !important;
     }
 
-    /* .subtotalContainer {
-        margin-left: auto;
-        margin-right: 0;
-    } */
-
     
-
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -817,6 +831,14 @@ button.accordion-button {
             font-size: 2.05rem;  
         }
 
+        .cartItemTotal {
+            margin-left: 0.2rem;
+        }
+
+        .qtyBtnsContainer {
+            margin-left: 0.9rem;
+        }
+
         .cartContShpLink {
             font-size: 1.1em;
         }
@@ -824,9 +846,11 @@ button.accordion-button {
         .cartWarningMsg {
             font-size: 1.15em;
         }
+
         #subtotal {
             font-size: 1.25rem;
         }
+
         #checkoutBtn {
             width: 8rem;
         }
@@ -889,6 +913,22 @@ button.accordion-button {
             width: 80vw;
             height: 80vw; 
         }
+    
+
+    /* CART */
+        .cartMain {
+            width: 85vw;
+            height: 85vh;
+        }
+
+        .cartItemTotal {
+            margin-left: 1.5rem;
+        }
+
+        .qtyBtnsContainer {
+            margin-left: 2.6rem;
+        }
+
 
 }
 
@@ -962,13 +1002,14 @@ button.accordion-button {
             font-size: 2.32rem;
         }
 
+
     /* FORM */
         input::placeholder {
             font-size: 1.2rem;
         }
 
-    /* HOME */
 
+    /* HOME */
         .homeVineyardImg {
             width: 70vw;
             height: auto;
@@ -1007,6 +1048,7 @@ button.accordion-button {
 
 
     /* CART */
+
         .startShopBtn {
             font-size: 1.40rem !important;
             width: 9rem;
@@ -1036,7 +1078,7 @@ button.accordion-button {
         .cartItemTotal {
             font-size: 1.08rem;
             margin-top: 0.5rem;
-            margin-left: 1rem;
+            margin-left: 2rem;
         }
 
         .cartQtyBtns {
@@ -1045,7 +1087,7 @@ button.accordion-button {
         }
 
         .qtyBtnsContainer {
-            margin-left: -2rem;
+            margin-left: -2.6rem;
         }
 
         .trashCan {
@@ -1068,13 +1110,9 @@ button.accordion-button {
         #taxShipMsg {
             font-size: 1.05rem;
         }
+
     
     /* WINE */
-        .mainWine {
-            border: 3px solid rgb(231, 198, 108);
-            border-radius: 1rem;
-        }
-
         .wineBottleImg {
             width: 50vw;
             height: auto;
@@ -1216,7 +1254,7 @@ button.accordion-button {
         .cartItemTotal {
             font-size: 1.11rem;
             margin-top: 0.5rem;
-            margin-left: 2.1rem;
+            margin-left: 2.7rem;
         }
 
         .cartQtyBtns {
@@ -1468,7 +1506,7 @@ button.accordion-button {
         .cartItemTotal {
             font-size: 1.18rem;
             margin-top: 0.5rem;
-            margin-left: 4.1rem;
+            margin-left: 4.5rem;
         }
 
         .cartQtyBtns {
@@ -1635,11 +1673,6 @@ button.accordion-button {
 
         .cartHeadingFull {
             font-size: 3.25rem;  
-        }
-
-        .cartMain {
-            width: 80vw;
-            height: 70vh;
         }
 
         .cartImg {

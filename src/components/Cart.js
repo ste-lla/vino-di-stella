@@ -115,9 +115,12 @@ const Cart = () => {
                     <div className="text-center mt-4">
                         <Link className="" to="/wine"><Button className="startShopBtn">Shop</Button></Link>    
                     </div>
+                    <div className="text-center mt-3">
+                        <Link className="rtnHomeLinkCart" to="/home">Return Home</Link>    
+                    </div>
                 </div>
             ) : (
-                <div className="d-flex flex-column justify-content-center align-items-center">
+                <div className="fullCartMain d-flex flex-column justify-content-center align-items-center">
                     <div className="cartMain">
                         <div className="text-center cartHeadingFull headingFontStyle">Cart&#40;{cart.cartCount}&#41;</div>
                     
