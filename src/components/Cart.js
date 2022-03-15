@@ -110,9 +110,9 @@ const Cart = () => {
     return (
         <div className="cartContainer d-flex flex-column justify-content-center align-items-center">
             { cart.cart.length === 0 ? (
-                <div className="cartMain">
+                <div className="emptyCartMain d-flex flex-column justify-content-center align-items-center">
                     <div className="text-center cartHeadingEmpty headingFontStyle">Your Cart Is Currently Empty</div>
-                    <div className="text-center">
+                    <div className="text-center mt-4">
                         <Link className="" to="/wine"><Button className="startShopBtn">Shop</Button></Link>    
                     </div>
                 </div>

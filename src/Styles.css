@@ -198,11 +198,18 @@
         height: 100vh;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/vinyardAbout.jpeg') no-repeat center;     
         background-size: cover;
+        animation: fadeIn 5s;
+    }
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
     }
 
     .ourStoryHeaders {
         color: white;
         font-weight: bold;
+        animation: fadeIn 5s
     }
 
     .aboutCircles {   
@@ -396,20 +403,30 @@ button.accordion-button {
         background-color: black;
     }
 
+    .emptyCartMain {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/wineShelf2.jpeg') no-repeat center;     
+        background-size: cover;
+        filter: grayscale(100%);
+    }
+
     .cartMain {
         color: white;
         padding: 1.5rem;
         border-radius: 1rem;
         border: 3px solid rgb(231, 198, 108);
+        overflow-y: auto;
         /* width: 70vw;
         height: 70vh; */
-        overflow-y: auto;
         /* background-color: #6b6f75; */   
     }
 
     .cartHeadingEmpty {
         letter-spacing: 0.25rem;
         margin-bottom: 0.75rem;
+        color: white;
+        font-weight: bolder;
     }
 
     .cartHeadingFull {
@@ -418,12 +435,16 @@ button.accordion-button {
     }
 
     .startShopBtn {
-        background-color: rgb(231, 198, 108) !important;
-        border: 1px solid rgb(231, 198, 108) !important;
-        color: black !important;
+        /* background-color: rgb(231, 198, 108) !important; */
+        /* border: 1px solid rgb(231, 198, 108) !important; */
+        background-color: black !important;
+        border: 1px solid white !important;
+        color: white !important;
+        border-radius: 1rem !important;
     }
     .startShopBtn:hover {
         background-color: white !important;
+        color: black !important;
     }
 
     .cartMain::-webkit-scrollbar {
@@ -539,6 +560,7 @@ button.accordion-button {
 
     .followUs {
         font-weight: bold;
+        font-size: 1.06rem;
     }
 
     .socMediaLinks {
@@ -549,8 +571,15 @@ button.accordion-button {
         color: rgb(231, 198, 108);
     }
 
+    .socMediaLinks {
+        background-color: rgba(231, 198, 108, 0.95);
+        padding: 0.5rem;
+        border-radius: 50%;
+    }
+
     .socMediaIcons {
         font-size: 1.35rem;
+        color: black;
     }
 
 
@@ -676,9 +705,6 @@ button.accordion-button {
             padding-left: 1rem;
         }
 
-        
-
-
     
     /* CART */
         .cartHeadingEmpty {
@@ -779,8 +805,8 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 1.25rem !important;
-            width: 5rem;
-            height: 3rem;
+            width: 7rem;
+            height: 2.5rem;
         }
         .cartHeadingEmpty {
             font-size: 2.05rem;
@@ -983,8 +1009,8 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 1.40rem !important;
-            width: 5.4rem;
-            height: 3.5rem;
+            width: 9rem;
+            height: 3rem;
         }
         .cartHeadingEmpty {
             font-size: 2.35rem; 
@@ -1162,9 +1188,10 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 1.55rem !important;
-            width: 5.8rem;
-            height: 4rem;
+            width: 11rem;
+            height: 3.25rem;
         }
+
         .cartHeadingEmpty {
             font-size: 2.65rem; 
             margin-top: 13.48vh; 
@@ -1414,8 +1441,8 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 1.7rem !important;
-            width: 6.2rem;
-            height: 4.5rem;
+            width: 12rem;
+            height: 3.5rem;
         }
         .cartHeadingEmpty {
             font-size: 2.95rem; 
@@ -1598,8 +1625,8 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 1.85rem !important;
-            width: 6.6rem;
-            height: 5rem;
+            width: 12.5rem;
+            height: 3.5rem;
         }
         .cartHeadingEmpty {
             font-size: 3.25rem;
@@ -1749,8 +1776,8 @@ button.accordion-button {
     /* CART */
         .startShopBtn {
             font-size: 2rem !important;
-            width: 7rem;
-            height: 5.5rem;
+            width: 13rem;
+            height: 3.75rem;
         }
         .cartHeadingEmpty {
             font-size: 3.5rem; 

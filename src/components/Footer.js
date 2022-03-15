@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
-import { BsFacebook } from "react-icons/bs";
+//import { BsFacebook } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa"
 import { ImInstagram } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 
@@ -51,7 +52,7 @@ const Footer = () => {
                 <Col xs={12} md={6} lg={2} className="footerCols footerRgtCol">
                     <div className="footer-right">
                         <div className="mb-2 followUs">Follow Us</div>
-                        <span className="me-4"><Link to="#" className="socMediaLinks"><BsFacebook className="socMediaIcons"/></Link></span>
+                        <span className="me-4"><Link to="#" className="socMediaLinks"><FaFacebookF className="socMediaIcons"/></Link></span>
                         <span className="me-4"><Link to="#" className="socMediaLinks"><ImInstagram className="socMediaIcons"/></Link></span>
                         <span className="me-4"><Link to="#" className="socMediaLinks"><BsTwitter className="socMediaIcons"/></Link></span>   
                     </div>
