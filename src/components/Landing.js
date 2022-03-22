@@ -27,7 +27,7 @@ const Landing = () => {
     }
     return (
         <div className="landingContainer d-flex justify-content-center">
-            <div className="landingFormWrapper">
+            <div className="landHeadingFormWrapper">
                 <Form className="d-flex flex-column">
                     <div className="landPgTitle">Vino Di Stella</div>
                     <Form.Group className="mb-3 confirmAgeMsg" controlId="formBasicCheckbox">
