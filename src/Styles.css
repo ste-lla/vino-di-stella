@@ -1,9 +1,14 @@
 
-/* GLOBAL CSS */
+/* GLOBAL | GENERAL CSS */
 
     .headingFontStyle {
         /* font-family: 'Roboto Serif', sans-serif; */ 
         font-family: 'Lora', serif;
+    }
+
+    /* ALL content not part of the footer should go in a container */
+    .nonFooterWrapper{
+        flex: 1 0 auto;
     }
 
 
@@ -105,10 +110,6 @@
         height: 100vh;
         overflow-y: auto;
         overflow-x: hidden; 
-    }
-
-    .nonFooterWrapper{
-        flex: 1 0 auto;
     }
 
 
@@ -508,6 +509,10 @@ button.accordion-button {
         font-weight: bold;
         text-align: center;
         margin-top: 0.6rem;
+    }
+
+    .cartQtyBtns:hover {
+        cursor: pointer;
     }
 
     .trashCan{
