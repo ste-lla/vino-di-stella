@@ -28,8 +28,8 @@ const Landing = () => {
     return (
         <div className="landingContainer d-flex justify-content-center">
             <div className="landHeadingFormWrapper">
-                <Form className="d-flex flex-column">
-                    <div className="landPgTitle">Vino Di Stella</div>
+                <Form className="d-flex flex-column landingForm">
+                    {/* <div className="landPgTitle">Vino Di Stella</div> */}
                     <Form.Group className="mb-3 confirmAgeMsg" controlId="formBasicCheckbox">
                         <Form.Check onChange={_handleVerify} type="checkbox" label="Confirm You Are 21 Or Older Before Entering" name="confirmAge" />
                     </Form.Group>

@@ -1,21 +1,21 @@
-# Vino-Di-Stella
+# Glass Gem
 
 
 ## Overview
-Vino-Di-Stella is an e-commerce application allowing users to explore
-some of the most purest and high quality italian wines created and 
-bottled in Italy. Shoppers are able to browse wine, add items to their
-cart and adjust quantity as desired. Shoppers may also login and create
-an account. However, the user profile page is being updated at this time.
-***Disclaimer: Vino-Di-Stella is a fictional company and this website
-exist only as an experimental e-commerce site. 
+Glass Gem is an e-commerce website allowing users to explore
+(fictional) italian wines. Shoppers are able to browse wine, 
+add items to their cart and adjust quantity as desired. 
+Shoppers may also create an account and login with their email and 
+password. Passwords are secured with bcrypt and stored in a database
+along with user email using PostgreSQL and pgAdmin.
 
 
 ![Landing Page](/screenshots/landingPage.png)
 
+![Home](/screenshots/homePage.png)
+
 ![Shopping Page](/screenshots/shopWine.png)
 
-![Cart](/screenshots/cart.png)
 
 
 ## Technologies Used
@@ -24,6 +24,7 @@ exist only as an experimental e-commerce site.
 - Redux
 - React-Bootstrap
 - Node.js
+- PostgreSQL
 - Express.js 
 - Sequelize
 - bcrypt.js

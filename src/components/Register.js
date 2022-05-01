@@ -44,21 +44,21 @@ const Register = () => {
     }
 
     return(
-        <div className="registerContainer">
-            <div id="registerTitle" className="headingFontStyle">Register</div>
-            <Form className="registerForm" onSubmit={_handleRegister}>
+        <div className="registerContainer loginRegContainer">
+            <div id="registerTitle" className="headingFontStyle loginRegTitle">Register</div>
+            <Form className="registerForm loginRegForms" onSubmit={_handleRegister}>
                 <Row className="">
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
                             {/* <Form.Label className="formLabels">First Name</Form.Label> */}
-                            <Form.Control required type="text" name="fname" placeholder="First Name" />
+                            <Form.Control required type="text" name="fname" placeholder="First Name" className="formField" />
                         </Form.Group>
                     </Col>
 
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
                             {/* <Form.Label className="formLabels">Last Name</Form.Label> */}
-                            <Form.Control required type="text" name="lname" placeholder="Last Name" />
+                            <Form.Control required type="text" name="lname" placeholder="Last Name" className="formField" />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -67,14 +67,14 @@ const Register = () => {
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             {/* <Form.Label>Email address</Form.Label> */}
-                            <Form.Control required type="email" placeholder="Email" name="email" />
+                            <Form.Control required type="email" placeholder="Email" name="email" className="formField" />
                         </Form.Group>
                     </Col>
                     
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             {/* <Form.Label>Password</Form.Label> */}
-                            <Form.Control required type="password" placeholder="Password" name="password" />
+                            <Form.Control required type="password" placeholder="Password" name="password" className="formField" />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -83,19 +83,19 @@ const Register = () => {
                     <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicPassword1">
                             {/* <Form.Label>Password</Form.Label> */}
-                            <Form.Control required type="password" placeholder="Confirm Password" name="confPassword" />
+                            <Form.Control required type="password" placeholder="Confirm Password" name="confPassword" className="formField" />
                         </Form.Group>
                     </Col>
                 </Row>
 
                 <div className="d-flex justify-content-center">
-                    <Button className="registerButton" type="submit">Register</Button>
+                    <Button className="formButton" type="submit">Register</Button>
                 </div>
             </Form>
 
-            <div className="registerErrMsg mt-3">{registerMsg}</div>
+            <div className="loginRegErrMsg mt-3">{registerMsg}</div>
 
-            <div className="text-center mt-2" style={{fontSize: "1.1rem"}}><Link to="/home">Return Home</Link></div>
+            <div className="text-center mt-2" style={{fontSize: "1.1rem"}}><Link to="/home" className="rtnHomeLinkLoginReg">Return Home</Link></div>
         </div>
     )
 }

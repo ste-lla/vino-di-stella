@@ -27,16 +27,16 @@ const Home = () => {
       
             <Offcanvas className="sideNavMain" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title className="sideNavTitle">Vino Di Stella</Offcanvas.Title>
+                    <Offcanvas.Title className="sideNavTitle">Glass Gem</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul className="sideNavList">
-                        <li><Link className="navLinks" to="/home">Home</Link></li>
-                        <li><Link className="navLinks" to="/about">About</Link></li>
-                        <li><Link className="navLinks" to="/wine">Our Wines</Link></li>
-                        <li><Link className="navLinks" to="/cart">Cart</Link></li>
-                        <li><Link className="navLinks" to="/login">Login</Link></li>
-                        <li><Link className="navLinks" to="/register">Register</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/home">Home</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/about">About</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/wine">Our Wines</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/cart">Cart</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/login">Login</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/register">Register</Link></li>
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -73,13 +73,13 @@ const Home = () => {
                 <Row className="mt-5">
                     <Col xs={12} md={7} xl={6} className="mx-auto">
                       <h2 className="homeSubHeader1 text-center headingFontStyle p-2">Producing a Smooth and Balanced Wine Drenched in <span className="underLineWord">Elegance</span> Is No Easy Task. 
-                          Not To Worry. Vino Di Stella Has You Covered.
+                          Not To Worry. Glass Gem Has You Covered.
                       </h2>
                     </Col>
 
                     <Col xs={12} md={10} lg={9} xl={8} className="mx-auto mt-3">
                         <p className="homeInfoTxt p-3">
-                            Vino Di Stella redefines the quality and expectations of fine Italian wine.
+                            Glass Gem redefines the quality and expectations of fine Italian wine.
                             Everyday, we pour our hearts and souls into every bottle and we hope you may
                             taste the genuine efforts of our labor. We use only the best techniques and
                             grade A machinery, from grape seed to bottle, creating something magical 
@@ -139,7 +139,7 @@ const Home = () => {
                 <Row className="mt-5">
                     <Col>
                         <div className="homeVineyardImg2 d-flex flex-column justify-content-center align-items-center">
-                            <p id="visitUs" className="headingFontStyle">We Welcome You To Visit Us</p>
+                            <p id="visitUs" className="headingFontStyle text-center">We Welcome You To Visit Us</p>
                             <p id="hoursOfOp"><strong>Open:</strong> Thursday - Sunday | 11am to 4:30pm</p>
                         </div>
                     </Col>

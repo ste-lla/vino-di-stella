@@ -42,14 +42,14 @@ const Login = () => {
     }
 
     return(
-        <div className="loginContainer">
-            <div id="loginTitle" className="headingFontStyle">Login</div>
-            <Form className="loginForm" onSubmit={_handleLogin}>
+        <div className="loginContainer loginRegContainer">
+            <div id="loginTitle" className="headingFontStyle loginRegTitle">Login</div>
+            <Form className="loginForm loginRegForms" onSubmit={_handleLogin}>
                 <Row className="d-flex justify-content-center">
                     <Col xs={12}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             {/* <Form.Label>Email address</Form.Label> */}
-                            <Form.Control type="email" placeholder="Email" name="email" />
+                            <Form.Control type="email" placeholder="Email" name="email" className="formField" />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -58,19 +58,19 @@ const Login = () => {
                     <Col xs={12}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             {/* <Form.Label>Password</Form.Label> */}
-                            <Form.Control type="password" placeholder="Password" name="password" />
+                            <Form.Control type="password" placeholder="Password" name="password" className="formField" />
                         </Form.Group>
                     </Col>
                 </Row>
 
                 <div className="d-flex justify-content-center">
-                    <Button className="loginButton" type="submit">Login</Button>
+                    <Button className="formButton" type="submit">Login</Button>
                 </div>
             </Form>
 
-            <div className="loginErrMsg mt-3">{loginErrMsg}</div>
+            <div className="loginRegErrMsg mt-3">{loginErrMsg}</div>
 
-            <div className="text-center mt-2" style={{fontSize: "1.1rem"}}><Link to="/home">Return Home</Link></div>
+            <div className="text-center mt-2" style={{fontSize: "1.1rem"}}><Link to="/home" className="rtnHomeLinkLoginReg">Return Home</Link></div>
         </div>
     )
 }

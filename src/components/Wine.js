@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
+//import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Accordion from 'react-bootstrap/Accordion';
@@ -39,16 +39,16 @@ const Wine = () => {
       
             <Offcanvas className="sideNavMain" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title className="sideNavTitle">Vino Di Stella</Offcanvas.Title>
+                    <Offcanvas.Title className="sideNavTitle">Glass Gem</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul className="sideNavList">
-                        <li><Link className="navLinks" to="/home">Home</Link></li>
-                        <li><Link className="navLinks" to="/about">About</Link></li>
-                        <li><Link className="navLinks" to="/wine">Our Wines</Link></li>
-                        <li><Link className="navLinks" to="/cart">Cart</Link></li>
-                        <li><Link className="navLinks" to="/login">Login</Link></li>
-                        <li><Link className="navLinks" to="/register">Register</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/home">Home</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/about">About</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/wine">Our Wines</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/cart">Cart</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/login">Login</Link></li>
+                        <li className="navListItems"><Link className="navLinks" to="/register">Register</Link></li>
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -159,24 +159,24 @@ const Wine = () => {
 
     let wineAndDetails = wine.inventory.map((wine) => {
         return(
-            <Row key={wine.id} className="mt-3 mb-3">
-                <Col xs={12} md={6} className="tempBordWine d-flex justify-content-center">
+            <Row key={wine.id} className="wineRow">
+                <Col xs={12} md={6} className="d-flex justify-content-center winePageImgCol">
                     <img className="wineBottleImg" src={WineBottle} alt="Wine Bottle" /> 
                 </Col>
 
-                <Col xs={12} md={6} className="tempBordWine d-flex justify-content-center align-items-center">
-                    <Accordion>
+                <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
+                    <Accordion className="">
                         <Accordion.Item eventKey="0" id={wine.id}>
                             <Accordion.Header className="wineName">{wine.name}</Accordion.Header>
                                 <Accordion.Body>
-                                    <div>
+                                    <div className="wineDescription">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in venenatis augue. 
                                         In tempus urna eu ultrices egestas. Pellentesque imperdiet diam nisi, vel 
                                         fringilla nisl ornare ut. Suspendisse efficitur ultrices elit, sit amet dapibus 
                                         eros varius ac. Curabitur blandit porttitor 
                                     </div>
                                     
-                                    <div className="winePrice mt-2">&#36;{wine.price}</div>
+                                    <div className="winePrice">&#36;{wine.price}</div>
                                     
                                     <div className="d-flex">
                                         <div className="quantityButtons" onClick={_decrementQty}>&lt;</div>
@@ -185,11 +185,11 @@ const Wine = () => {
                                     </div>
                                     
                                     <div className="d-flex">
-                                        <Button className="addCartBtn mt-3" onClick={_handleAddToCart}>Add To Cart</Button>
-                                        <div className="mt-4 ms-3" id="addedMsg">{itemAddedMsg}</div>
+                                        <Button className="addCartBtn" onClick={_handleAddToCart}>Add To Cart</Button>
+                                        <div className="addedToCartMsg">{itemAddedMsg}</div>
                                     </div>
 
-                                    <div className="mt-2">{qtyLimitMsg}{outOfStock}</div>
+                                    <div className="mt-2 outOfStockMsg">{qtyLimitMsg}{outOfStock}</div>
                                 </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>  
@@ -201,11 +201,11 @@ const Wine = () => {
 
     return (
         <div className="wineContainer d-flex flex-column">
-            <div className="wineWrapper">
+            <div className="wineWrapper d-flex flex-column">
                 <SideNav/>
-                <Container className="mainWine mt-2 mb-3">
+                <div className="mainWine align-self-center">
                     {wineAndDetails}  
-                </Container>
+                </div>
             </div>
             <Footer />
         </div>

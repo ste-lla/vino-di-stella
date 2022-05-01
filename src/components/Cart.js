@@ -77,7 +77,7 @@ const Cart = () => {
 
 
         return(
-            <Row key={wineItem.id} className="mt-4">
+            <Row key={wineItem.id} className="wineRow">
                 <Col xs={6} sm={5} xl={4} className="d-flex justify-content-center order-1">
                     <img className="cartImg" src={WineBottle} alt="Wine Bottle" /> 
                 </Col>
@@ -89,9 +89,9 @@ const Cart = () => {
 
                 <Col xs={7} sm={6} xl={3} className="order-4 order-sm-5 order-xl-4">
                     <div className="d-flex idWine qtyBtnsContainer" id={wineItem.id}>
-                        <div className="cartQtyBtns" onClick={_decrementQty}>&lt;</div>
+                        <div className="quantityButtons" style={{color: "black"}} onClick={_decrementQty}>&lt;</div>
                         <div className="qtyValue">{wineItem.quantity}</div>
-                        <div className="cartQtyBtns" onClick={_incrementQty}>&gt;</div>
+                        <div className="quantityButtons" style={{color: "black"}} onClick={_incrementQty}>&gt;</div>
                     </div>
                     
                 </Col>
@@ -128,10 +128,12 @@ const Cart = () => {
                             {allCartItems}
                         </div>
         
-                        <div className="mt-5 subtotalContainer d-flex flex-column">
-                            <div id="subtotal" className="mb-2"><span><strong>Subtotal:</strong></span> &#36;{cart.total}</div>
-                            <Button id="checkoutBtn" className="mb-2">Checkout</Button>
-                            <div id="taxShipMsg">*Taxes and shipping calculated at checkout</div>
+                        <div className="mt-5 d-flex justify-content-end">
+                            <div className="d-flex flex-column">
+                                <div id="subtotal" className="mb-2 text-end"><span><strong>Subtotal:</strong></span> &#36;{cart.total}</div>
+                                <Button id="checkoutBtn" className="mb-2">Checkout</Button>
+                                <div className="text-end" id="taxShipMsg">*Taxes and shipping calculated at checkout</div>
+                            </div>
                         </div>
                     </div>
     
